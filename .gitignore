@@ -1,4 +1,14 @@
-**/prj_*/
-**/*.log
-**/.Xil/
+# Python
 **/__pycache__/
+
+# Vitis HLS / Xilinx build artifacts (bulky, do not commit)
+**/prj_*/
+**/.Xil/
+**/waveflow_*_proj/
+
+# Stray simulation / build logs
+**/*.log
+
+# ...except the raw evidence that results.md cites (commit these)
+!cmdresp/takehome/results/sim/py_model.log
+!cmdresp/takehome/results/vitis/*.log
