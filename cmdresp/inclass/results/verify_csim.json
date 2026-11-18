@@ -1,0 +1,163 @@
+{
+  "common": {
+    "basic_handcheck": {
+      "outputs_match": true,
+      "status_match": true,
+      "golden_outputs": [
+        2.0,
+        -1.5,
+        7.0
+      ],
+      "csim_outputs": [
+        2.0,
+        -1.5,
+        7.0
+      ],
+      "golden_status": {
+        "halted": 0,
+        "error": 0,
+        "tx_id": 0
+      },
+      "csim_status": {
+        "halted": 0,
+        "error": 0,
+        "tx_id": 0
+      },
+      "pass": true
+    },
+    "two_data": {
+      "outputs_match": true,
+      "status_match": true,
+      "golden_outputs": [
+        2.0,
+        -1.5,
+        7.0,
+        1.5
+      ],
+      "csim_outputs": [
+        2.0,
+        -1.5,
+        7.0,
+        1.5
+      ],
+      "golden_status": {
+        "halted": 0,
+        "error": 0,
+        "tx_id": 0
+      },
+      "csim_status": {
+        "halted": 0,
+        "error": 0,
+        "tx_id": 0
+      },
+      "pass": true
+    },
+    "reconfig": {
+      "outputs_match": true,
+      "status_match": true,
+      "golden_outputs": [
+        3.0,
+        -1.5,
+        3.5
+      ],
+      "csim_outputs": [
+        3.0,
+        -1.5,
+        3.5
+      ],
+      "golden_status": {
+        "halted": 0,
+        "error": 0,
+        "tx_id": 0
+      },
+      "csim_status": {
+        "halted": 0,
+        "error": 0,
+        "tx_id": 0
+      },
+      "pass": true
+    },
+    "err_data_before_config": {
+      "outputs_match": true,
+      "status_match": true,
+      "golden_outputs": [],
+      "csim_outputs": [],
+      "golden_status": {
+        "halted": 1,
+        "error": 1,
+        "tx_id": 7
+      },
+      "csim_status": {
+        "halted": 1,
+        "error": 1,
+        "tx_id": 7
+      },
+      "pass": true
+    },
+    "err_zero_samples": {
+      "outputs_match": true,
+      "status_match": true,
+      "golden_outputs": [],
+      "csim_outputs": [],
+      "golden_status": {
+        "halted": 1,
+        "error": 2,
+        "tx_id": 10
+      },
+      "csim_status": {
+        "halted": 1,
+        "error": 2,
+        "tx_id": 10
+      },
+      "pass": true
+    },
+    "fresh_pass": {
+      "outputs_match": true,
+      "status_match": true,
+      "golden_outputs": [
+        0.0,
+        4.0
+      ],
+      "csim_outputs": [
+        0.0,
+        4.0
+      ],
+      "golden_status": {
+        "halted": 0,
+        "error": 0,
+        "tx_id": 0
+      },
+      "csim_status": {
+        "halted": 0,
+        "error": 0,
+        "tx_id": 0
+      },
+      "pass": true
+    }
+  },
+  "csim_only": {
+    "err_tlast_early": {
+      "expected_error": 3,
+      "csim_outputs": [],
+      "csim_status": {
+        "halted": 1,
+        "error": 3,
+        "tx_id": 31
+      },
+      "golden": "not exercised (SimPy read cannot surface TLAST framing)",
+      "pass": true
+    },
+    "err_no_tlast": {
+      "expected_error": 4,
+      "csim_outputs": [],
+      "csim_status": {
+        "halted": 1,
+        "error": 4,
+        "tx_id": 41
+      },
+      "golden": "not exercised (SimPy read cannot surface TLAST framing)",
+      "pass": true
+    }
+  },
+  "all_passed": true
+}

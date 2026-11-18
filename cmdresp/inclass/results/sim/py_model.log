@@ -1,0 +1,7 @@
+=== Scale-and-offset golden-model evidence (per scenario) ===
+basic_handcheck: outputs=[2.0, -1.5, 7.0] status={'halted': 0, 'error': 0, 'tx_id': 0}
+two_data: outputs=[2.0, -1.5, 7.0, 1.5] status={'halted': 0, 'error': 0, 'tx_id': 0}
+reconfig: outputs=[3.0, -1.5, 3.5] status={'halted': 0, 'error': 0, 'tx_id': 0}
+err_data_before_config: outputs=[] status={'halted': 1, 'error': 1, 'tx_id': 7}
+err_zero_samples: outputs=[] status={'halted': 1, 'error': 2, 'tx_id': 10}
+fresh_pass: outputs=[0.0, 4.0] status={'halted': 0, 'error': 0, 'tx_id': 0}
