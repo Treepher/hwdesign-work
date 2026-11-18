@@ -1,0 +1,15 @@
+=== Histogram golden-model verification ===
+[PASS] basic_handcheck
+[PASS] accumulate_two_data
+[PASS] reconfig_mid_activation
+[PASS] limit_b1
+[PASS] limit_b16_nsamp128
+[PASS] limit_nsamp1
+[PASS] err_data_before_config
+[PASS] err_invalid_config_b0
+[PASS] err_invalid_config_lo_ge_hi
+[PASS] err_zero_samples
+[PASS] err_sample_out_of_range
+[PASS] numpy_crosscheck
+[PASS] fresh_activation_recovery
+ALL PASSED

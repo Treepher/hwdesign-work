@@ -1,0 +1,247 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2026.1 (64-bit)
+Tool Version Limit: 2026.06
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csim_design -argv C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/data 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [HLS 200-2191] C-Simulation will use clang-16 as the compiler
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:08; Allocated memory: 0.672 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.534 seconds; current allocated memory: 159.785 MB.
+INFO: [HLS 200-2191] C-Synthesis will use clang-16 as the compiler
+INFO: [HLS 200-10] Analyzing design file 'gen/hist.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 11.229 seconds; current allocated memory: 166.910 MB.
+INFO: [HLS 200-1995] There were 6,078 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-131] Inlining function 'float32_array_utils::read_axi4_stream_elem_impl<32>::run(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, float*, streamutils::tlast_status&, int)' into 'void float32_array_utils::read_axi4_stream_lane<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, float*, int, streamutils::tlast_status&)' (.\include/float32_array_utils.h:410:5)
+INFO: [HLS 214-131] Inlining function 'void float32_array_utils::read_axi4_stream_lane<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, float*, int, streamutils::tlast_status&)' into 'ap_uint<8> hist_impl::accumulate<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_accumulate_impl.tpp:79:9)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_123_4' (gen/../hist_accumulate_impl.tpp:123:23) in function 'hist_impl::accumulate<32, 32>' completely with a factor of 16 (gen/../hist_accumulate_impl.tpp:31:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_82_3' (gen/../hist_accumulate_impl.tpp:82:26) in function 'hist_impl::accumulate<32, 32>' completely with a factor of 1 (gen/../hist_accumulate_impl.tpp:31:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_65_1' (gen/../hist_accumulate_impl.tpp:65:22) in function 'hist_impl::accumulate<32, 32>' completely with a factor of 16 (gen/../hist_accumulate_impl.tpp:31:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_46_1' (gen/../hist_configure_impl.tpp:46:22) in function 'hist_impl::configure<32, 32>' completely with a factor of 16 (gen/../hist_configure_impl.tpp:24:0)
+INFO: [HLS 200-1995] There were 1,151 instructions in the design after the 'Unroll/Inline' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 857 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-178] Inlining function 'hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()' into 'HistCmdHdr::read_axi4_stream_impl(HistCmdHdr::word_bw_tag<32>, HistCmdHdr*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' (.\include/hist_cmd_hdr.h:209:0)
+INFO: [HLS 214-178] Inlining function 'HistCmdHdr::read_axi4_stream_impl(HistCmdHdr::word_bw_tag<32>, HistCmdHdr*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' into 'void HistCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' (.\include/hist_cmd_hdr.h:283:0)
+INFO: [HLS 214-178] Inlining function 'void HistCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' into 'void HistCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (.\include/hist_cmd_hdr.h:288:0)
+INFO: [HLS 214-178] Inlining function 'hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()' into 'void streamutils::write_axi4_word<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>, bool)' (.\include/streamutils_hls.h:147:0)
+INFO: [HLS 214-178] Inlining function 'void streamutils::write_axi4_word<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>, bool)' into 'HistRespHdr::write_axi4_stream_impl(HistRespHdr::word_bw_tag<32>, HistRespHdr const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) (.80)' (./include/hist_resp_hdr.h:106:0)
+INFO: [HLS 214-178] Inlining function 'HistRespHdr::write_axi4_stream_impl(HistRespHdr::word_bw_tag<32>, HistRespHdr const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) (.80)' into 'void HistRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' (./include/hist_resp_hdr.h:119:0)
+INFO: [HLS 214-178] Inlining function 'hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()' into 'CfgPayload::read_axi4_stream_impl(CfgPayload::word_bw_tag<32>, CfgPayload*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' (./include/cfg_payload.h:219:0)
+INFO: [HLS 214-178] Inlining function 'streamutils::uint_to_float(unsigned int)' into 'CfgPayload::read_axi4_stream_impl(CfgPayload::word_bw_tag<32>, CfgPayload*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' (./include/cfg_payload.h:219:0)
+INFO: [HLS 214-178] Inlining function 'void CfgPayload::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' into 'void CfgPayload::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (./include/cfg_payload.h:316:0)
+INFO: [HLS 214-178] Inlining function 'void HistRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' into 'ap_uint<8> hist_impl::configure<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_configure_impl.tpp:24:0)
+INFO: [HLS 214-178] Inlining function 'void CfgPayload::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' into 'ap_uint<8> hist_impl::configure<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_configure_impl.tpp:24:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::mantissa() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::expv() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::__signbit() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' into 'int generic_cast_IEEE754<int, float>(float, bool)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, float>(float, bool)' into '__hls_fptosi_float_i32' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51:0)
+INFO: [HLS 214-178] Inlining function 'void HistRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' into 'ap_uint<8> hist_impl::accumulate<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_accumulate_impl.tpp:31:0)
+INFO: [HLS 214-178] Inlining function 'hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()' into 'ap_uint<8> hist_impl::accumulate<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_accumulate_impl.tpp:31:0)
+INFO: [HLS 214-178] Inlining function 'streamutils::uint_to_float(unsigned int)' into 'ap_uint<8> hist_impl::accumulate<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_accumulate_impl.tpp:31:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_float_i32' into 'ap_uint<8> hist_impl::accumulate<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_accumulate_impl.tpp:31:0)
+INFO: [HLS 214-178] Inlining function 'void HistRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' into 'ap_uint<8> hist_impl::emit<32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, ap_uint<32>*)' (gen/../hist_emit_impl.tpp:19:0)
+INFO: [HLS 214-178] Inlining function 'void streamutils::write_axi4_word<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>, bool)' into 'ap_uint<8> hist_impl::emit<32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, ap_uint<32>*)' (gen/../hist_emit_impl.tpp:19:0)
+INFO: [HLS 214-178] Inlining function 'void HistCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' into 'hist(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (gen/hist.cpp:9:0)
+INFO: [HLS 214-178] Inlining function 'ap_uint<8> hist_impl::configure<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' into 'hist(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (gen/hist.cpp:9:0)
+INFO: [HLS 200-1995] There were 902 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 629 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-248] Applying array_partition to 'local_counters': Complete partitioning on dimension 1. (gen/../hist_accumulate_impl.tpp:63:17)
+INFO: [HLS 200-1995] There were 709 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 642 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 642 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 642 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 916 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 905 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-376] Pipelining loop< VITIS_LOOP_75_2> at gen/../hist_accumulate_impl.tpp:75:22 due to pipeline_loops threshold
+INFO: [HLS 200-1995] There were 792 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-421] Partitioning small array 'hist(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)::nbin' due to array size. (gen/hist.cpp:17:0)
+INFO: [HLS 214-421] Partitioning small array 'hist(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)::bounds' due to array size. (gen/hist.cpp:18:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ4histRN3hls6streamINS_4axisI6ap_intILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES6_R7ap_uintILi1EERS7_ILi8EERS7_ILi16EEE6bounds': Complete partitioning on dimension 1. (gen/hist.cpp:18:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ4histRN3hls6streamINS_4axisI6ap_intILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEES6_R7ap_uintILi1EERS7_ILi8EERS7_ILi16EEE4nbin': Complete partitioning on dimension 1. (gen/hist.cpp:17:0)
+INFO: [HLS 200-1995] There were 663 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 663 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 586 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 444 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 14.183 seconds; current allocated memory: 170.051 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.007 seconds; current allocated memory: 170.051 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 184.211 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.072 seconds; current allocated memory: 185.895 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.246 seconds; current allocated memory: 208.746 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.331 seconds; current allocated memory: 252.324 MB.
+INFO: [HLS 200-2255] Checking Wire Delay Status: Wire Delay Mode is ON
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'hist' ...
+WARNING: [SYN 201-103] Legalizing function name 'accumulate<32, 32>_Pipeline_VITIS_LOOP_75_2' to 'accumulate_32_32_Pipeline_VITIS_LOOP_75_2'.
+WARNING: [SYN 201-103] Legalizing function name 'accumulate<32, 32>' to 'accumulate_32_32_s'.
+WARNING: [SYN 201-103] Legalizing function name 'emit<32>_Pipeline_VITIS_LOOP_32_1' to 'emit_32_Pipeline_VITIS_LOOP_32_1'.
+WARNING: [SYN 201-103] Legalizing function name 'emit<32>' to 'emit_32_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'accumulate_32_32_Pipeline_VITIS_LOOP_75_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_75_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 18, loop 'VITIS_LOOP_75_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.738 seconds; current allocated memory: 283.609 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.378 seconds; current allocated memory: 283.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'accumulate_32_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.332 seconds; current allocated memory: 283.609 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.078 seconds; current allocated memory: 283.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_axi4_stream_impl' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.099 seconds; current allocated memory: 283.609 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 283.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'emit_32_Pipeline_VITIS_LOOP_32_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_32_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_32_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.042 seconds; current allocated memory: 283.609 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.116 seconds; current allocated memory: 283.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'emit_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 283.609 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.036 seconds; current allocated memory: 283.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'hist' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.069 seconds; current allocated memory: 283.609 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.071 seconds; current allocated memory: 283.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'accumulate_32_32_Pipeline_VITIS_LOOP_75_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'accumulate_32_32_Pipeline_VITIS_LOOP_75_2' pipeline 'VITIS_LOOP_75_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_4_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'accumulate_32_32_Pipeline_VITIS_LOOP_75_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.415 seconds; current allocated memory: 283.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'accumulate_32_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_16_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32ns_32_6_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'accumulate_32_32_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.462 seconds; current allocated memory: 288.871 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_axi4_stream_impl' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_axi4_stream_impl'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.431 seconds; current allocated memory: 289.578 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'emit_32_Pipeline_VITIS_LOOP_32_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'emit_32_Pipeline_VITIS_LOOP_32_1' pipeline 'VITIS_LOOP_32_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'emit_32_Pipeline_VITIS_LOOP_32_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.153 seconds; current allocated memory: 289.617 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'emit_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'emit_32_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.211 seconds; current allocated memory: 290.250 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'hist' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/s_in_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/s_in_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/s_in_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/s_in_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/m_out_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/m_out_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/m_out_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/m_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/halted' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/error' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/tx_id' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'hist' to 's_axilite & ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'hist_stream_stream_axis_0_ap_uint_1_ap_uint_8_ap_uint_16_nbin' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'hist_stream_stream_axis_0_ap_uint_1_ap_uint_8_ap_uint_16_bounds_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'hist_stream_stream_axis_0_ap_uint_1_ap_uint_8_ap_uint_16_bounds' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'halted', 'error', 'tx_id' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'hist'.
+INFO: [RTMG 210-278] Implementing memory 'hist_counters_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.26 seconds; current allocated memory: 291.703 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.917 seconds; current allocated memory: 297.023 MB.
+INFO: [HLS 200-2225] Wrote inferred directives to file C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/inferred_directives.ini
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.748 seconds; current allocated memory: 304.000 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for hist.
+INFO: [VLOG 209-307] Generating Verilog RTL for hist.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:37; Allocated memory: 144.652 MB.
+INFO: [HLS 200-1510] Running: cosim_design -argv C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/data -trace_level none 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:01:59; Allocated memory: 13.621 MB.

@@ -1,0 +1,30 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "kind": "schema",
+      "filename": "resp_cfg_data.bin",
+      "pass": true
+    },
+    {
+      "kind": "schema",
+      "filename": "resp_data_data.bin",
+      "pass": true
+    },
+    {
+      "kind": "schema",
+      "filename": "resp_end_data.bin",
+      "pass": true
+    },
+    {
+      "kind": "array",
+      "filename": "counters_data.bin",
+      "pass": true
+    },
+    {
+      "kind": "json",
+      "filename": "regmap_status.json",
+      "pass": true
+    }
+  ]
+}

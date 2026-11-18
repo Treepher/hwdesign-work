@@ -1,0 +1,8 @@
+INFO: [SIM 2] *************** CSIM start ***************
+   Compiling ../../../../include/streamutils.cpp in debug mode
+   Compiling ../../../../gen/hist_tb.cpp in debug mode
+   Compiling ../../../../gen/hist.cpp in debug mode
+   Generating csim.exe
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 15
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

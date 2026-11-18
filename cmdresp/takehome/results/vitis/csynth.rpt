@@ -1,0 +1,462 @@
+
+
+================================================================
+== Synthesis Summary Report of 'hist'
+================================================================
++ General Information: 
+    * Date:           Wed Nov 18 11:43:16 2026
+    * Version:        2026.1 (Build 6493734 on Jun 16 2026)
+    * Project:        waveflow_hist_proj
+    * Solution:       solution1
+    * Product family: zynq
+    * Target device:  xc7z020-clg484-1
+    
+
+* Performance & Resource Estimates: 
++------------------------------------------------+------+---------------+----------+---------+------+----------+---------+--------+------+------+--------+-----------+-----------+-----+
+|                     Modules                    | Issue|               | Iteration|         | Trip |          |      Latency     |      |      |        |           |           |     |
+|                     & Loops                    | Type | Violation Type|  Latency | Interval| Count| Pipelined| (cycles)|  (ns)  | Slack| BRAM |   DSP  |     FF    |    LUT    | URAM|
++------------------------------------------------+------+---------------+----------+---------+------+----------+---------+--------+------+------+--------+-----------+-----------+-----+
+|+ hist                                          |     -|              -|         -|        -|     -|        no|        -|       -|  0.04|     -|  5 (2%)|  3902 (3%)|  5095 (9%)|    -|
+| + emit_32_s                                    |     -|              -|         -|        -|     -|        no|        -|       -|  1.56|     -|       -|   84 (~0%)|  287 (~0%)|    -|
+|  + emit_32_Pipeline_VITIS_LOOP_32_1            |     -|              -|         -|        -|     -|       yes|        -|       -|  2.05|     -|       -|   20 (~0%)|  118 (~0%)|    -|
+|   o VITIS_LOOP_32_1                            |     -|              -|         2|        1|     -|       yes|        -|       -|  7.30|     -|       -|          -|          -|    -|
+| o VITIS_LOOP_20_1                              |     -|              -|         -|        -|     -|        no|        -|       -|  7.30|     -|       -|          -|          -|    -|
+|  + accumulate_32_32_s                          |     -|              -|         -|        -|     -|        no|        -|       -|  0.04|     -|  5 (2%)|  3126 (2%)|  3933 (7%)|    -|
+|   + accumulate_32_32_Pipeline_VITIS_LOOP_75_2  |     -|              -|         -|        -|     -|       yes|        -|       -|  0.04|     -|  3 (1%)|  2090 (1%)|  2323 (4%)|    -|
+|    o VITIS_LOOP_75_2                           |     -|              -|        18|        1|     -|       yes|        -|       -|  7.30|     -|       -|          -|          -|    -|
+|  + read_axi4_stream_impl                       |     -|              -|         -|        2|     -|        no|        2|  20.000|  5.19|     -|       -|  197 (~0%)|  105 (~0%)|    -|
++------------------------------------------------+------+---------------+----------+---------+------+----------+---------+--------+------+------+--------+-----------+-----------+-----+
+    Name Prefix: '+' for module, 'o' for loop, '*' for dataflow
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register    | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL        | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER        | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER      | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR      | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | halted      | 0x10   | 32    | R      | Data signal of halted            |                                                                      |
+| s_axi_control | halted_ctrl | 0x14   | 32    | R      | Control signal of halted         | 0=halted_ap_vld                                                      |
+| s_axi_control | error       | 0x20   | 32    | R      | Data signal of error             |                                                                      |
+| s_axi_control | error_ctrl  | 0x24   | 32    | R      | Control signal of error          | 0=error_ap_vld                                                       |
+| s_axi_control | tx_id       | 0x30   | 32    | R      | Data signal of tx_id             |                                                                      |
+| s_axi_control | tx_id_ctrl  | 0x34   | 32    | R      | Control signal of tx_id          | 0=tx_id_ap_vld                                                       |
++---------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++-----------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| Interface | Direction | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
++-----------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+| m_out     | out       | both          | 32    | 4     | 1     | 1      | 4     | 1      |
+| s_in      | in        | both          | 32    | 4     | 1     | 1      | 4     | 1      |
++-----------+-----------+---------------+-------+-------+-------+--------+-------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+-----------------------------------------------------------------------------+
+| Argument | Direction | Datatype                                                                    |
++----------+-----------+-----------------------------------------------------------------------------+
+| s_in     | in        | stream<hls::axis<ap_int<32>, 0UL, 0UL, 0UL, (unsigned char)'8', false>, 0>& |
+| m_out    | out       | stream<hls::axis<ap_int<32>, 0UL, 0UL, 0UL, (unsigned char)'8', false>, 0>& |
+| halted   | out       | ap_uint<1>&                                                                 |
+| error    | out       | ap_uint<8>&                                                                 |
+| tx_id    | out       | ap_uint<16>&                                                                |
++----------+-----------+-----------------------------------------------------------------------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+---------------------------------------+
+| Argument | HW Interface  | HW Type   | HW Info                               |
++----------+---------------+-----------+---------------------------------------+
+| s_in     | s_in          | interface |                                       |
+| m_out    | m_out         | interface |                                       |
+| halted   | s_axi_control | register  | name=halted offset=0x10 range=32      |
+| halted   | s_axi_control | register  | name=halted_ctrl offset=0x14 range=32 |
+| error    | s_axi_control | register  | name=error offset=0x20 range=32       |
+| error    | s_axi_control | register  | name=error_ctrl offset=0x24 range=32  |
+| tx_id    | s_axi_control | register  | name=tx_id offset=0x30 range=32       |
+| tx_id    | s_axi_control | register  | name=tx_id_ctrl offset=0x34 range=32  |
++----------+---------------+-----------+---------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------------+-----+--------+-------------------+-----------+--------------------------+---------+
+| Name                                          | DSP | Pragma | Variable          | Op        | Impl                     | Latency |
++-----------------------------------------------+-----+--------+-------------------+-----------+--------------------------+---------+
+| + hist                                        | 5   |        |                   |           |                          |         |
+|   icmp_ln34_fu_384_p2                         |     |        | icmp_ln34         | seteq     | auto                     | 0       |
+|   add_ln38_fu_407_p2                          |     |        | add_ln38          | add       | fabric                   | 0       |
+|   icmp_ln38_fu_422_p2                         |     |        | icmp_ln38         | setne     | auto                     | 0       |
+|   icmp_ln38_1_fu_462_p2                       |     |        | icmp_ln38_1       | setne     | auto                     | 0       |
+|   icmp_ln38_2_fu_468_p2                       |     |        | icmp_ln38_2       | seteq     | auto                     | 0       |
+|   or_ln38_1_fu_474_p2                         |     |        | or_ln38_1         | or        | auto                     | 0       |
+|   icmp_ln38_3_fu_480_p2                       |     |        | icmp_ln38_3       | setne     | auto                     | 0       |
+|   icmp_ln38_4_fu_486_p2                       |     |        | icmp_ln38_4       | seteq     | auto                     | 0       |
+|   or_ln38_2_fu_492_p2                         |     |        | or_ln38_2         | or        | auto                     | 0       |
+|   and_ln38_fu_498_p2                          |     |        | and_ln38          | and       | auto                     | 0       |
+|   fcmp_32ns_32ns_1_2_no_dsp_1_U84             |     |        | tmp_s             | fcmp      | auto                     | 1       |
+|   and_ln38_1_fu_504_p2                        |     |        | and_ln38_1        | and       | auto                     | 0       |
+|   or_ln38_fu_510_p2                           |     |        | or_ln38           | or        | auto                     | 0       |
+|  + accumulate_32_32_s                         | 5   |        |                   |           |                          |         |
+|    icmp_ln39_fu_340_p2                        |     |        | icmp_ln39         | seteq     | auto                     | 0       |
+|    icmp_ln43_fu_350_p2                        |     |        | icmp_ln43         | seteq     | auto                     | 0       |
+|    sitofp_32ns_32_6_no_dsp_1_U45              |     |        | conv              | sitofp    | auto                     | 5       |
+|    fsub_32ns_32ns_32_5_full_dsp_1_U43         | 2   |        | sub               | fsub      | fulldsp                  | 4       |
+|    fdiv_32ns_32ns_32_16_no_dsp_1_U44          |     |        | scale             | fdiv      | fabric                   | 15      |
+|    add_ln75_fu_366_p2                         |     |        | add_ln75          | add       | fabric                   | 0       |
+|    icmp_ln118_fu_463_p2                       |     |        | icmp_ln118        | seteq     | auto                     | 0       |
+|    add_ln125_fu_468_p2                        |     |        | add_ln125         | add       | fabric                   | 0       |
+|    add_ln125_1_fu_473_p2                      |     |        | add_ln125_1       | add       | fabric                   | 0       |
+|    add_ln125_2_fu_478_p2                      |     |        | add_ln125_2       | add       | fabric                   | 0       |
+|    add_ln125_3_fu_483_p2                      |     |        | add_ln125_3       | add       | fabric                   | 0       |
+|    add_ln125_4_fu_488_p2                      |     |        | add_ln125_4       | add       | fabric                   | 0       |
+|    add_ln125_5_fu_493_p2                      |     |        | add_ln125_5       | add       | fabric                   | 0       |
+|    add_ln125_6_fu_498_p2                      |     |        | add_ln125_6       | add       | fabric                   | 0       |
+|    add_ln125_7_fu_503_p2                      |     |        | add_ln125_7       | add       | fabric                   | 0       |
+|    add_ln125_8_fu_508_p2                      |     |        | add_ln125_8       | add       | fabric                   | 0       |
+|    add_ln125_9_fu_513_p2                      |     |        | add_ln125_9       | add       | fabric                   | 0       |
+|    add_ln125_10_fu_518_p2                     |     |        | add_ln125_10      | add       | fabric                   | 0       |
+|    add_ln125_11_fu_523_p2                     |     |        | add_ln125_11      | add       | fabric                   | 0       |
+|    add_ln125_12_fu_528_p2                     |     |        | add_ln125_12      | add       | fabric                   | 0       |
+|    add_ln125_13_fu_533_p2                     |     |        | add_ln125_13      | add       | fabric                   | 0       |
+|    add_ln125_14_fu_538_p2                     |     |        | add_ln125_14      | add       | fabric                   | 0       |
+|    add_ln125_15_fu_543_p2                     |     |        | add_ln125_15      | add       | fabric                   | 0       |
+|   + accumulate_32_32_Pipeline_VITIS_LOOP_75_2 | 3   |        |                   |           |                          |         |
+|     icmp_ln75_fu_813_p2                       |     |        | icmp_ln75         | setlt     | auto                     | 0       |
+|     xor_ln75_fu_819_p2                        |     |        | xor_ln75          | xor       | auto                     | 0       |
+|     and_ln75_fu_825_p2                        |     |        | and_ln75          | and       | auto                     | 0       |
+|     i_3_fu_831_p2                             |     |        | i_3               | add       | fabric                   | 0       |
+|     nrem_fu_841_p2                            |     |        | nrem              | sub       | fabric                   | 0       |
+|     icmp_ln77_fu_858_p2                       |     |        | icmp_ln77         | setlt     | auto                     | 0       |
+|     lane_count_fu_863_p3                      |     |        | lane_count        | select    | auto_sel                 | 0       |
+|     icmp_ln192_fu_847_p2                      |     |        | icmp_ln192        | setgt     | auto                     | 0       |
+|     icmp_ln84_fu_892_p2                       |     |        | icmp_ln84         | setgt     | auto                     | 0       |
+|     icmp_ln87_fu_1019_p2                      |     |        | icmp_ln87         | setne     | auto                     | 0       |
+|     icmp_ln87_1_fu_1025_p2                    |     |        | icmp_ln87_1       | seteq     | auto                     | 0       |
+|     or_ln87_1_fu_1031_p2                      |     |        | or_ln87_1         | or        | auto                     | 0       |
+|     icmp_ln87_2_fu_907_p2                     |     |        | icmp_ln87_2       | setne     | auto                     | 0       |
+|     icmp_ln87_3_fu_913_p2                     |     |        | icmp_ln87_3       | seteq     | auto                     | 0       |
+|     or_ln87_2_fu_1035_p2                      |     |        | or_ln87_2         | or        | auto                     | 0       |
+|     and_ln87_fu_1039_p2                       |     |        | and_ln87          | and       | auto                     | 0       |
+|     fcmp_32ns_32ns_1_2_no_dsp_1_U4            |     |        | tmp_4             | fcmp      | auto                     | 1       |
+|     and_ln87_1_fu_1045_p2                     |     |        | and_ln87_1        | and       | auto                     | 0       |
+|     icmp_ln87_4_fu_927_p2                     |     |        | icmp_ln87_4       | setne     | auto                     | 0       |
+|     icmp_ln87_5_fu_933_p2                     |     |        | icmp_ln87_5       | seteq     | auto                     | 0       |
+|     or_ln87_3_fu_1051_p2                      |     |        | or_ln87_3         | or        | auto                     | 0       |
+|     and_ln87_2_fu_1055_p2                     |     |        | and_ln87_2        | and       | auto                     | 0       |
+|     and_ln87_3_fu_1061_p2                     |     |        | and_ln87_3        | and       | auto                     | 0       |
+|     or_ln87_fu_1066_p2                        |     |        | or_ln87           | or        | auto                     | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U2          | 3   |        | idx_f             | fmul      | maxdsp                   | 3       |
+|     add_ln317_fu_1104_p2                      |     |        | add_ln317         | add       | fabric                   | 0       |
+|     sub_ln18_fu_1118_p2                       |     |        | sub_ln18          | sub       | fabric                   | 0       |
+|     select_ln18_fu_1128_p3                    |     |        | select_ln18       | select    | auto_sel                 | 0       |
+|     lshr_ln18_fu_1156_p2                      |     |        | lshr_ln18         | lshr      | auto_pipe                | 0       |
+|     shl_ln18_fu_1162_p2                       |     |        | shl_ln18          | shl       | auto_pipe                | 0       |
+|     val_fu_1188_p3                            |     |        | val               | select    | auto_sel                 | 0       |
+|     result_2_fu_1195_p2                       |     |        | result_2          | sub       | fabric                   | 0       |
+|     result_fu_1200_p3                         |     |        | result            | select    | auto_sel                 | 0       |
+|     idx_1_fu_1218_p3                          |     |        | idx_1             | select    | auto_sel                 | 0       |
+|     icmp_ln94_fu_1228_p2                      |     |        | icmp_ln94         | setlt     | auto                     | 0       |
+|     xor_ln94_fu_1233_p2                       |     |        | xor_ln94          | xor       | auto                     | 0       |
+|     idx_3_fu_1239_p3                          |     |        | idx_3             | select    | auto_sel                 | 0       |
+|     sparsemux_33_4_32_1_1_U5                  |     |        | tmp_3             | sparsemux | compactencoding_dontcare | 0       |
+|     local_counters_16_fu_1405_p2              |     |        | local_counters_16 | add       | fabric                   | 0       |
+|     nsamp_read_1_fu_944_p2                    |     |        | nsamp_read_1      | add       | fabric                   | 0       |
+|     icmp_ln103_fu_959_p2                      |     |        | icmp_ln103        | setlt     | auto                     | 0       |
+|     select_ln101_fu_965_p3                    |     |        | select_ln101      | select    | auto_sel                 | 0       |
+|     read_done_1_fu_973_p2                     |     |        | read_done_1       | or        | auto                     | 0       |
+|     samp_tlast_1_fu_979_p3                    |     |        | samp_tlast_1      | select    | auto_sel                 | 0       |
+|  + emit_32_s                                  | 0   |        |                   |           |                          |         |
+|    icmp_ln27_fu_110_p2                        |     |        | icmp_ln27         | seteq     | auto                     | 0       |
+|    add_ln32_fu_116_p2                         |     |        | add_ln32          | add       | fabric                   | 0       |
+|   + emit_32_Pipeline_VITIS_LOOP_32_1          | 0   |        |                   |           |                          |         |
+|     icmp_ln32_fu_114_p2                       |     |        | icmp_ln32         | seteq     | auto                     | 0       |
+|     add_ln32_fu_120_p2                        |     |        | add_ln32          | add       | fabric                   | 0       |
+|     tlast_fu_131_p2                           |     |        | tlast             | seteq     | auto                     | 0       |
++-----------------------------------------------+-----+--------+-------------------+-----------+--------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+-----------+-----------+------+------+--------+--------+----------+------+---------+------------------+
+| Name              | Usage     | Type      | BRAM | URAM | CE_REG | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                   |           |           |      |      |        |        |          |      |         | Banks            |
++-------------------+-----------+-----------+------+------+--------+--------+----------+------+---------+------------------+
+| + hist            |           |           | 0    | 0    |        |        |          |      |         |                  |
+|   control_s_axi_U | interface | s_axilite |      |      |        |        |          |      |         |                  |
+|   counters_U      | ram_t2p   |           |      |      | N      |        | counters | auto | 1       | 32, 16, 1        |
++-------------------+-----------+-----------+------+------+--------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Ignored Pragmas
++-----------------+--------------------------------+-----------------------------------------------------------------------+-----------------+
+| Type            | Options                        | Location                                                              | Messages        |
++-----------------+--------------------------------+-----------------------------------------------------------------------+-----------------+
+| ARRAY_PARTITION | variable=x_lane complete dim=1 | in accumulate (hist_accumulate_impl.tpp:55)                           | Not implemented |
+| INLINE          |                                | in read_stream_elem_impl (include/counter_array.h:74)                 | Not implemented |
+| INLINE          |                                | in read_stream_elem_impl (include/counter_array.h:82)                 | Not implemented |
+| INLINE          |                                | in read_stream_elem (include/counter_array.h:94)                      | Not implemented |
+| INLINE          |                                | in read_axi4_stream_elem_impl (include/counter_array.h:107)           | Not implemented |
+| INLINE          |                                | in read_axi4_stream_elem_impl (include/counter_array.h:115)           | Not implemented |
+| INLINE          |                                | in read_axi4_stream_elem (include/counter_array.h:127)                | Not implemented |
+| INLINE          |                                | in write_stream_elem_impl (include/counter_array.h:140)               | Not implemented |
+| INLINE          |                                | in write_stream_elem_impl (include/counter_array.h:148)               | Not implemented |
+| INLINE          |                                | in write_stream_elem (include/counter_array.h:161)                    | Not implemented |
+| INLINE          |                                | in write_axi4_stream_elem_impl (include/counter_array.h:175)          | Not implemented |
+| INLINE          |                                | in write_axi4_stream_elem_impl (include/counter_array.h:183)          | Not implemented |
+| INLINE          |                                | in write_axi4_stream_elem (include/counter_array.h:196)               | Not implemented |
+| INLINE          |                                | in read_stream_elem_impl (include/float32_array.h:74)                 | Not implemented |
+| INLINE          |                                | in read_stream_elem_impl (include/float32_array.h:82)                 | Not implemented |
+| INLINE          |                                | in read_stream_elem (include/float32_array.h:94)                      | Not implemented |
+| INLINE          |                                | in read_axi4_stream_elem_impl (include/float32_array.h:107)           | Not implemented |
+| INLINE          |                                | in read_axi4_stream_elem_impl (include/float32_array.h:115)           | Not implemented |
+| INLINE          |                                | in read_axi4_stream_elem (include/float32_array.h:127)                | Not implemented |
+| INLINE          |                                | in write_stream_elem_impl (include/float32_array.h:140)               | Not implemented |
+| INLINE          |                                | in write_stream_elem_impl (include/float32_array.h:148)               | Not implemented |
+| INLINE          |                                | in write_stream_elem (include/float32_array.h:161)                    | Not implemented |
+| INLINE          |                                | in write_axi4_stream_elem_impl (include/float32_array.h:175)          | Not implemented |
+| INLINE          |                                | in write_axi4_stream_elem_impl (include/float32_array.h:183)          | Not implemented |
+| INLINE          |                                | in write_axi4_stream_elem (include/float32_array.h:196)               | Not implemented |
+| INLINE          |                                | in run_lane (include/float32_array_utils.h:51)                        | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:58)                             | Not implemented |
+| INLINE          |                                | in run_lane (include/float32_array_utils.h:68)                        | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:76)                             | Not implemented |
+| INLINE          |                                | in write_lane (include/float32_array_utils.h:103)                     | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:109)                            | Not implemented |
+| INLINE          |                                | in write_lane (include/float32_array_utils.h:119)                     | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:126)                            | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:154)                            | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:165)                            | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:206)                            | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:235)                            | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:246)                            | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:272)                            | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:283)                            | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:309)                            | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:325)                            | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:355)                            | Not implemented |
+| INLINE          |                                | in run (include/float32_array_utils.h:366)                            | Not implemented |
+| INLINE          |                                | in read_array_lane (include/float32_array_utils.h:385)                | Not implemented |
+| INLINE          |                                | in write_array_lane (include/float32_array_utils.h:391)               | Not implemented |
+| INLINE          |                                | in read_stream_lane (include/float32_array_utils.h:397)               | Not implemented |
+| INLINE          |                                | in write_stream_lane (include/float32_array_utils.h:403)              | Not implemented |
+| INLINE          |                                | in read_axi4_stream_lane (include/float32_array_utils.h:415)          | Not implemented |
+| INLINE          |                                | in write_axi4_stream_lane (include/float32_array_utils.h:422)         | Not implemented |
+| INLINE          |                                | in read_framed_stream_lane (include/float32_array_utils.h:431)        | Not implemented |
+| INLINE          |                                | in read_framed_stream_lane (include/float32_array_utils.h:437)        | Not implemented |
+| INLINE          |                                | in write_framed_stream_lane (include/float32_array_utils.h:444)       | Not implemented |
+| INLINE          |                                | in elem_read (include/float32_array_utils.h:455)                      | Not implemented |
+| INLINE          |                                | in elem_write (include/float32_array_utils.h:462)                     | Not implemented |
+| INLINE          |                                | in read_array_slice_dispatch (include/float32_array_utils.h:501)      | Not implemented |
+| UNROLL          |                                | in read_array_slice_dispatch (include/float32_array_utils.h:512)      | Not implemented |
+| UNROLL          |                                | in read_array_slice_dispatch (include/float32_array_utils.h:527)      | Not implemented |
+| UNROLL          |                                | in read_array_slice_dispatch (include/float32_array_utils.h:537)      | Not implemented |
+| INLINE          |                                | in read_array_slice_dispatch (include/float32_array_utils.h:546)      | Not implemented |
+| INLINE          |                                | in read_array_slice (include/float32_array_utils.h:558)               | Not implemented |
+| INLINE          |                                | in write_array_slice_dispatch (include/float32_array_utils.h:575)     | Not implemented |
+| UNROLL          |                                | in write_array_slice_dispatch (include/float32_array_utils.h:585)     | Not implemented |
+| INLINE          |                                | in write_array_slice_dispatch (include/float32_array_utils.h:598)     | Not implemented |
+| INLINE          |                                | in write_array_slice (include/float32_array_utils.h:610)              | Not implemented |
+| INLINE          |                                | in write_array_slice_rmw_dispatch (include/float32_array_utils.h:626) | Not implemented |
+| UNROLL          |                                | in write_array_slice_rmw_dispatch (include/float32_array_utils.h:638) | Not implemented |
+| UNROLL          |                                | in write_array_slice_rmw_dispatch (include/float32_array_utils.h:653) | Not implemented |
+| UNROLL          |                                | in write_array_slice_rmw_dispatch (include/float32_array_utils.h:666) | Not implemented |
+| INLINE          |                                | in write_array_slice_rmw_dispatch (include/float32_array_utils.h:677) | Not implemented |
+| INLINE          |                                | in write_array_slice_rmw (include/float32_array_utils.h:689)          | Not implemented |
+| INLINE          |                                | in read_array_slice (include/float32_array_utils.h:699)               | Not implemented |
+| INLINE          |                                | in write_array_slice (include/float32_array_utils.h:705)              | Not implemented |
+| INLINE          |                                | in read_stream (include/float32_array_utils.h:711)                    | Not implemented |
+| INLINE          |                                | in read_axi4_stream (include/float32_array_utils.h:722)               | Not implemented |
+| INLINE          |                                | in read_axi4_stream (include/float32_array_utils.h:749)               | Not implemented |
+| INLINE          |                                | in read_axi4_stream (include/float32_array_utils.h:756)               | Not implemented |
+| INLINE          |                                | in read_axi4_stream (include/float32_array_utils.h:763)               | Not implemented |
+| INLINE          |                                | in write_stream (include/float32_array_utils.h:771)                   | Not implemented |
+| INLINE          |                                | in write_axi4_stream (include/float32_array_utils.h:782)              | Not implemented |
+| INLINE          |                                | in read_framed_stream (include/float32_array_utils.h:796)             | Not implemented |
+| INLINE          |                                | in read_framed_stream (include/float32_array_utils.h:812)             | Not implemented |
+| INLINE          |                                | in write_framed_stream (include/float32_array_utils.h:819)            | Not implemented |
+| INLINE          |                                | in read_stream_elem_impl (include/u_int32_array.h:74)                 | Not implemented |
+| INLINE          |                                | in read_stream_elem_impl (include/u_int32_array.h:82)                 | Not implemented |
+| INLINE          |                                | in read_stream_elem (include/u_int32_array.h:94)                      | Not implemented |
+| INLINE          |                                | in read_axi4_stream_elem_impl (include/u_int32_array.h:107)           | Not implemented |
+| INLINE          |                                | in read_axi4_stream_elem_impl (include/u_int32_array.h:115)           | Not implemented |
+| INLINE          |                                | in read_axi4_stream_elem (include/u_int32_array.h:127)                | Not implemented |
+| INLINE          |                                | in write_stream_elem_impl (include/u_int32_array.h:140)               | Not implemented |
+| INLINE          |                                | in write_stream_elem_impl (include/u_int32_array.h:148)               | Not implemented |
+| INLINE          |                                | in write_stream_elem (include/u_int32_array.h:161)                    | Not implemented |
+| INLINE          |                                | in write_axi4_stream_elem_impl (include/u_int32_array.h:175)          | Not implemented |
+| INLINE          |                                | in write_axi4_stream_elem_impl (include/u_int32_array.h:183)          | Not implemented |
+| INLINE          |                                | in write_axi4_stream_elem (include/u_int32_array.h:196)               | Not implemented |
+| INLINE          |                                | in run_lane (include/uint32_array_utils.h:51)                         | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:58)                              | Not implemented |
+| INLINE          |                                | in run_lane (include/uint32_array_utils.h:68)                         | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:76)                              | Not implemented |
+| INLINE          |                                | in write_lane (include/uint32_array_utils.h:103)                      | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:109)                             | Not implemented |
+| INLINE          |                                | in write_lane (include/uint32_array_utils.h:119)                      | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:126)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:154)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:165)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:190)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:206)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:235)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:246)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:272)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:283)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:309)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:325)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:355)                             | Not implemented |
+| INLINE          |                                | in run (include/uint32_array_utils.h:366)                             | Not implemented |
+| INLINE          |                                | in read_array_lane (include/uint32_array_utils.h:385)                 | Not implemented |
+| INLINE          |                                | in write_array_lane (include/uint32_array_utils.h:391)                | Not implemented |
+| INLINE          |                                | in read_stream_lane (include/uint32_array_utils.h:397)                | Not implemented |
+| INLINE          |                                | in write_stream_lane (include/uint32_array_utils.h:403)               | Not implemented |
+| INLINE          |                                | in read_axi4_stream_lane (include/uint32_array_utils.h:409)           | Not implemented |
+| INLINE          |                                | in read_axi4_stream_lane (include/uint32_array_utils.h:415)           | Not implemented |
+| INLINE          |                                | in write_axi4_stream_lane (include/uint32_array_utils.h:422)          | Not implemented |
+| INLINE          |                                | in read_framed_stream_lane (include/uint32_array_utils.h:431)         | Not implemented |
+| INLINE          |                                | in read_framed_stream_lane (include/uint32_array_utils.h:437)         | Not implemented |
+| INLINE          |                                | in write_framed_stream_lane (include/uint32_array_utils.h:444)        | Not implemented |
+| INLINE          |                                | in elem_read (include/uint32_array_utils.h:455)                       | Not implemented |
+| INLINE          |                                | in elem_write (include/uint32_array_utils.h:462)                      | Not implemented |
+| INLINE          |                                | in read_array_slice_dispatch (include/uint32_array_utils.h:501)       | Not implemented |
+| UNROLL          |                                | in read_array_slice_dispatch (include/uint32_array_utils.h:512)       | Not implemented |
+| UNROLL          |                                | in read_array_slice_dispatch (include/uint32_array_utils.h:527)       | Not implemented |
+| UNROLL          |                                | in read_array_slice_dispatch (include/uint32_array_utils.h:537)       | Not implemented |
+| INLINE          |                                | in read_array_slice_dispatch (include/uint32_array_utils.h:546)       | Not implemented |
+| INLINE          |                                | in read_array_slice (include/uint32_array_utils.h:558)                | Not implemented |
+| INLINE          |                                | in write_array_slice_dispatch (include/uint32_array_utils.h:575)      | Not implemented |
+| UNROLL          |                                | in write_array_slice_dispatch (include/uint32_array_utils.h:585)      | Not implemented |
+| INLINE          |                                | in write_array_slice_dispatch (include/uint32_array_utils.h:598)      | Not implemented |
+| INLINE          |                                | in write_array_slice (include/uint32_array_utils.h:610)               | Not implemented |
+| INLINE          |                                | in write_array_slice_rmw_dispatch (include/uint32_array_utils.h:626)  | Not implemented |
+| UNROLL          |                                | in write_array_slice_rmw_dispatch (include/uint32_array_utils.h:638)  | Not implemented |
+| UNROLL          |                                | in write_array_slice_rmw_dispatch (include/uint32_array_utils.h:653)  | Not implemented |
+| UNROLL          |                                | in write_array_slice_rmw_dispatch (include/uint32_array_utils.h:666)  | Not implemented |
+| INLINE          |                                | in write_array_slice_rmw_dispatch (include/uint32_array_utils.h:677)  | Not implemented |
+| INLINE          |                                | in write_array_slice_rmw (include/uint32_array_utils.h:689)           | Not implemented |
+| INLINE          |                                | in read_array_slice (include/uint32_array_utils.h:699)                | Not implemented |
+| INLINE          |                                | in write_array_slice (include/uint32_array_utils.h:705)               | Not implemented |
+| INLINE          |                                | in read_stream (include/uint32_array_utils.h:711)                     | Not implemented |
+| INLINE          |                                | in read_axi4_stream (include/uint32_array_utils.h:722)                | Not implemented |
+| INLINE          |                                | in read_axi4_stream (include/uint32_array_utils.h:749)                | Not implemented |
+| INLINE          |                                | in read_axi4_stream (include/uint32_array_utils.h:756)                | Not implemented |
+| INLINE          |                                | in read_axi4_stream (include/uint32_array_utils.h:763)                | Not implemented |
+| INLINE          |                                | in write_stream (include/uint32_array_utils.h:771)                    | Not implemented |
+| INLINE          |                                | in write_axi4_stream (include/uint32_array_utils.h:782)               | Not implemented |
+| INLINE          |                                | in read_framed_stream (include/uint32_array_utils.h:796)              | Not implemented |
+| INLINE          |                                | in read_framed_stream (include/uint32_array_utils.h:812)              | Not implemented |
+| INLINE          |                                | in write_framed_stream (include/uint32_array_utils.h:819)             | Not implemented |
++-----------------+--------------------------------+-----------------------------------------------------------------------+-----------------+
+
+* Inferred Pragmas
++-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
+| Type            | Options                                                                                                                                                                                                                                             | Location                                                                                                                                                                                                                                                  | Inferred From                            |
++-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
+| ARRAY_PARTITION | dim=1 type=complete variable=hist(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)::nbin   | variable hist(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)::nbin in hist (gen/hist.cpp:17)   | syn.array_partition.complete_threshold=4 |
+| ARRAY_PARTITION | dim=1 type=complete variable=hist(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)::bounds | variable hist(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)::bounds in hist (gen/hist.cpp:18) | syn.array_partition.complete_threshold=4 |
+| PIPELINE        |                                                                                                                                                                                                                                                     | loop VITIS_LOOP_75_2 (gen/../hist_accumulate_impl.tpp:75:22) in hist_impl::accumulate<32, 32> (hist_accumulate_impl.tpp:75)                                                                                                                               | syn.compile.pipeline_loops=64            |
++-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------+
+
+* Implemented Pragmas
++-----------------+---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type            | Options                                     | Location                                                                                                                                                                                                    |
++-----------------+---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ARRAY_PARTITION | dim=1 type=complete variable=local_counters | in hist_impl::accumulate<32, 32> (hist_accumulate_impl.tpp:64)                                                                                                                                              |
+| UNROLL          |                                             | in hist_impl::accumulate<32, 32> (hist_accumulate_impl.tpp:66)                                                                                                                                              |
+| UNROLL          |                                             | in hist_impl::accumulate<32, 32> (hist_accumulate_impl.tpp:83)                                                                                                                                              |
+| UNROLL          |                                             | in hist_impl::accumulate<32, 32> (hist_accumulate_impl.tpp:124)                                                                                                                                             |
+| UNROLL          |                                             | in hist_impl::configure<32, 32> (hist_configure_impl.tpp:47)                                                                                                                                                |
+| INLINE          |                                             | in _zn19float32_array_utils26read_axi4_stream_elem_implili32ee3runern3hls6streamins2_4axisi6ap_intili32eelm0elm0elm0elh56elb0eeeli0eeepfrn11streamutils12tlast_statusei (include/float32_array_utils.h:190) |
+| INLINE          |                                             | in _zn19float32_array_utils21read_axi4_stream_laneili32eeevrn3hls6streamins1_4axisi6ap_intixt_eelm0elm0elm0elh56elb0eeeli0eeepfirn11streamutils12tlast_statuse (include/float32_array_utils.h:409)          |
++-----------------+---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------------+----------------------------------------+-----------------------------------------------------------------------+
+| Type            | Options                                | Location                                                              |
++-----------------+----------------------------------------+-----------------------------------------------------------------------+
+| INTERFACE       | axis port=s_in                         | in hist (gen/hist.cpp:10)                                             |
+| INTERFACE       | axis port=m_out                        | in hist (gen/hist.cpp:11)                                             |
+| INTERFACE       | s_axilite port=halted bundle=control   | in hist (gen/hist.cpp:12)                                             |
+| INTERFACE       | s_axilite port=error bundle=control    | in hist (gen/hist.cpp:13)                                             |
+| INTERFACE       | s_axilite port=tx_id bundle=control    | in hist (gen/hist.cpp:14)                                             |
+| INTERFACE       | s_axilite port=return bundle=control   | in hist (gen/hist.cpp:15)                                             |
+| ARRAY_PARTITION | variable=local_counters complete dim=1 | in accumulate (hist_accumulate_impl.tpp:64)                           |
+| UNROLL          |                                        | in accumulate (hist_accumulate_impl.tpp:66)                           |
+| UNROLL          |                                        | in accumulate (hist_accumulate_impl.tpp:83)                           |
+| UNROLL          |                                        | in accumulate (hist_accumulate_impl.tpp:124)                          |
+| UNROLL          |                                        | in configure (hist_configure_impl.tpp:47)                             |
+| PIPELINE        | ii=1                                   | in emit (hist_emit_impl.tpp:33)                                       |
+| PIPELINE        | ii=1                                   | in write_array_impl (include/counter_array.h:222)                     |
+| PIPELINE        | ii=1                                   | in write_stream_impl (include/counter_array.h:266)                    |
+| PIPELINE        | ii=1                                   | in write_axi4_stream_impl (include/counter_array.h:312)               |
+| PIPELINE        | ii=1                                   | in read_array_impl (include/counter_array.h:354)                      |
+| PIPELINE        | ii=1                                   | in read_stream_impl (include/counter_array.h:397)                     |
+| PIPELINE        | ii=1                                   | in read_axi4_stream_impl (include/counter_array.h:464)                |
+| PIPELINE        | ii=1                                   | in write_array_impl (include/float32_array.h:222)                     |
+| PIPELINE        | ii=1                                   | in write_stream_impl (include/float32_array.h:266)                    |
+| PIPELINE        | ii=1                                   | in write_axi4_stream_impl (include/float32_array.h:312)               |
+| PIPELINE        | ii=1                                   | in read_array_impl (include/float32_array.h:354)                      |
+| PIPELINE        | ii=1                                   | in read_stream_impl (include/float32_array.h:397)                     |
+| PIPELINE        | ii=1                                   | in read_axi4_stream_impl (include/float32_array.h:464)                |
+| INLINE          |                                        | in run (include/float32_array_utils.h:190)                            |
+| INLINE          |                                        | in read_axi4_stream_lane (include/float32_array_utils.h:409)          |
+| PIPELINE        | ii=1                                   | in read_array_slice_dispatch (include/float32_array_utils.h:523)      |
+| PIPELINE        | ii=1                                   | in read_array_slice_dispatch (include/float32_array_utils.h:551)      |
+| PIPELINE        | ii=1                                   | in write_array_slice_dispatch (include/float32_array_utils.h:582)     |
+| PIPELINE        | ii=1                                   | in write_array_slice_dispatch (include/float32_array_utils.h:603)     |
+| PIPELINE        | ii=1                                   | in write_array_slice_rmw_dispatch (include/float32_array_utils.h:650) |
+| PIPELINE        | ii=1                                   | in write_array_slice_rmw_dispatch (include/float32_array_utils.h:682) |
+| PIPELINE        | ii=1                                   | in flush_axi4_stream_to_tlast (include/streamutils_hls.h:164)         |
+| PIPELINE        | ii=1                                   | in write_array_impl (include/u_int32_array.h:222)                     |
+| PIPELINE        | ii=1                                   | in write_stream_impl (include/u_int32_array.h:266)                    |
+| PIPELINE        | ii=1                                   | in write_axi4_stream_impl (include/u_int32_array.h:312)               |
+| PIPELINE        | ii=1                                   | in read_array_impl (include/u_int32_array.h:354)                      |
+| PIPELINE        | ii=1                                   | in read_stream_impl (include/u_int32_array.h:397)                     |
+| PIPELINE        | ii=1                                   | in read_axi4_stream_impl (include/u_int32_array.h:464)                |
+| PIPELINE        | ii=1                                   | in read_array_slice_dispatch (include/uint32_array_utils.h:523)       |
+| PIPELINE        | ii=1                                   | in read_array_slice_dispatch (include/uint32_array_utils.h:551)       |
+| PIPELINE        | ii=1                                   | in write_array_slice_dispatch (include/uint32_array_utils.h:582)      |
+| PIPELINE        | ii=1                                   | in write_array_slice_dispatch (include/uint32_array_utils.h:603)      |
+| PIPELINE        | ii=1                                   | in write_array_slice_rmw_dispatch (include/uint32_array_utils.h:650)  |
+| PIPELINE        | ii=1                                   | in write_array_slice_rmw_dispatch (include/uint32_array_utils.h:682)  |
++-----------------+----------------------------------------+-----------------------------------------------------------------------+
+
+
