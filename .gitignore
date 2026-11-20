@@ -11,6 +11,7 @@
 
 # ...except the raw evidence that results.md cites (commit these)
 !cmdresp/takehome/results/sim/py_model.log
+!cmdresp/takehome/results/csim.log
 !cmdresp/takehome/results/vitis/*.log
 !cmdresp/inclass/results/sim/py_model.log
 !cmdresp/inclass/results/csim.log

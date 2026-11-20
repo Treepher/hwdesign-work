@@ -1,0 +1,23 @@
+{
+  "method": "delta method: (16-1)/(cycles(N=16)-cycles(N=1)) samples/clock",
+  "target": {
+    "ii": 1,
+    "samples_per_clock": 1.0,
+    "source": "prompt.md Requirements (II = 1, one sample per clock)"
+  },
+  "runs": {
+    "N1": {
+      "n": 1,
+      "cycles": 119,
+      "report": "C:\\Users\\troop\\SynologyDrive\\NYU\\Fall_2026\\Adv_HW_Design\\hwdesign-work\\cmdresp\\takehome\\waveflow_hist_proj\\solution1\\sim\\report\\hist_cosim.rpt"
+    },
+    "N16": {
+      "n": 16,
+      "cycles": 134,
+      "report": "C:\\Users\\troop\\SynologyDrive\\NYU\\Fall_2026\\Adv_HW_Design\\hwdesign-work\\cmdresp\\takehome\\waveflow_hist_proj\\solution1\\sim\\report\\hist_cosim.rpt"
+    }
+  },
+  "marginal_cycles_per_sample": 1.0,
+  "throughput_samples_per_clock": 1.0,
+  "pass": true
+}

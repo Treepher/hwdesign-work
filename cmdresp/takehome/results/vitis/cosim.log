@@ -1,0 +1,1947 @@
+
+****** vitis-run v2026.1 (64-bit)
+  **** SW Build 6511674 on 2026-06-16-13:14:00
+  **** Start of session at: Thu Nov 19 18:41:12 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2026.1 6493734
+
+Sourcing Tcl script 'C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/run.tcl'
+
+INFO: [HLS 200-1510] Running: open_project -reset waveflow_hist_proj 
+
+WARNING: [HLS 200-2182] The 'waveflow_hist_proj' project will not automatically appear within Vitis IDE workspaces and is meant only for TCL batch use.  Please use open_component instead of open_project/open_solution to generate Vitis IDE compatible component files and directory structure.
+
+Resolution: For help on HLS 200-2182 see docs.amd.com/access/sources/dita/topic?Doc_Version=2026.1%20English&url=ug1448-hls-guidance&resourceid=200-2182.html
+
+INFO: [HLS 200-10] Opening and resetting solution 'C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj'.
+
+INFO: [HLS 200-1510] Running: set_top hist 
+
+INFO: [HLS 200-1510] Running: add_files gen/hist.cpp -cflags -I. 
+
+INFO: [HLS 200-10] Adding design file 'gen/hist.cpp' to the project
+
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/include/streamutils.cpp 
+
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/include/streamutils.cpp' to the project
+
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/gen/hist_tb.cpp -cflags -I. 
+
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/gen/hist_tb.cpp' to the project
+
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+
+INFO: [HLS 200-10] Creating and opening solution 'C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1'.
+
+INFO: [HLS 200-10] Cleaning up the solution database.
+
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+
+INFO: [HLS 200-1510] Running: csim_design -argv C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/data 
+
+INFO: [SIM 211-2] *************** CSIM start ***************
+
+INFO: [HLS 200-2191] C-Simulation will use clang-16 as the compiler
+
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+
+   Compiling ../../../../gen/hist_tb.cpp in debug mode
+   Compiling ../../../../include/streamutils.cpp in debug mode
+   Compiling ../../../../gen/hist.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../gen/hist_tb.cpp:35:
+In file included from ../../../../gen/hist.hpp:3:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\ap_int.h:10:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\etc/ap_common.h:668:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\etc/ap_private.h:68:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\hls_half.h:26:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include/etc/hls_half_fpo.h:19:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\hls_fpo.h:140:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/AMDDesignTools/2026.1/Vitis/include\gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/AMDDesignTools/2026.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+In file included from ../../../../include/streamutils.cpp:9:
+In file included from ../../../../include/streamutils_hls.h:4:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\ap_int.h:10:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\etc/ap_common.h:668:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\etc/ap_private.h:68:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\hls_half.h:26:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include/etc/hls_half_fpo.h:19:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\hls_fpo.h:140:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/AMDDesignTools/2026.1/Vitis/include\gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/AMDDesignTools/2026.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+In file included from ../../../../gen/hist.cpp:1:
+In file included from ../../../../gen/hist.hpp:3:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\ap_int.h:10:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\etc/ap_common.h:668:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\etc/ap_private.h:68:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\hls_half.h:26:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include/etc/hls_half_fpo.h:19:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include\hls_fpo.h:140:
+In file included from C:/AMDDesignTools/2026.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/AMDDesignTools/2026.1/Vitis/include\gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/AMDDesignTools/2026.1/Vitis/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+WARNING [HLS SIM]: hls::stream 'hls::stream<hls::axis<ap_int<32>, 0ull, 0ull, 0ull, (unsigned char)56, false>, 0>12' contains leftover data, which may result in RTL simulation hanging.
+
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 137
+
+INFO: [SIM 211-1] CSim done with 0 errors.
+
+INFO: [SIM 211-3] *************** CSIM finish ***************
+
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:13; Allocated memory: 0.715 MB.
+
+INFO: [HLS 200-1510] Running: csynth_design 
+
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.323 seconds; current allocated memory: 159.242 MB.
+
+INFO: [HLS 200-2191] C-Synthesis will use clang-16 as the compiler
+
+INFO: [HLS 200-10] Analyzing design file 'gen/hist.cpp' ... 
+
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 17.884 seconds; current allocated memory: 165.996 MB.
+
+INFO: [HLS 200-1995] There were 6,238 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 214-131] Inlining function 'float32_array_utils::read_axi4_stream_elem_impl<32>::run(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, float*, streamutils::tlast_status&, int)' into 'void float32_array_utils::read_axi4_stream_lane<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, float*, int, streamutils::tlast_status&)' (.\include/float32_array_utils.h:410:5)
+
+INFO: [HLS 214-131] Inlining function 'void float32_array_utils::read_axi4_stream_lane<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, float*, int, streamutils::tlast_status&)' into 'ap_uint<8> hist_impl::accumulate<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_accumulate_impl.tpp:79:9)
+
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_123_4' (gen/../hist_accumulate_impl.tpp:123:23) in function 'hist_impl::accumulate<32, 32>' completely with a factor of 16 (gen/../hist_accumulate_impl.tpp:31:0)
+
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_82_3' (gen/../hist_accumulate_impl.tpp:82:26) in function 'hist_impl::accumulate<32, 32>' completely with a factor of 1 (gen/../hist_accumulate_impl.tpp:31:0)
+
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_65_1' (gen/../hist_accumulate_impl.tpp:65:22) in function 'hist_impl::accumulate<32, 32>' completely with a factor of 16 (gen/../hist_accumulate_impl.tpp:31:0)
+
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_46_1' (gen/../hist_configure_impl.tpp:46:22) in function 'hist_impl::configure<32, 32>' completely with a factor of 16 (gen/../hist_configure_impl.tpp:24:0)
+
+INFO: [HLS 200-1995] There were 1,246 instructions in the design after the 'Unroll/Inline' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 200-1995] There were 916 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 214-178] Inlining function 'hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()' into 'HistCmdHdr::read_axi4_stream_impl(HistCmdHdr::word_bw_tag<32>, HistCmdHdr*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' (.\include/hist_cmd_hdr.h:209:0)
+
+INFO: [HLS 214-178] Inlining function 'HistCmdHdr::read_axi4_stream_impl(HistCmdHdr::word_bw_tag<32>, HistCmdHdr*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' into 'void HistCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' (.\include/hist_cmd_hdr.h:283:0)
+
+INFO: [HLS 214-178] Inlining function 'void HistCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' into 'void HistCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (.\include/hist_cmd_hdr.h:288:0)
+
+INFO: [HLS 214-178] Inlining function 'hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()' into 'void streamutils::write_axi4_word<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>, bool)' (.\include/streamutils_hls.h:147:0)
+
+INFO: [HLS 214-178] Inlining function 'void streamutils::write_axi4_word<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>, bool)' into 'HistRespHdr::write_axi4_stream_impl(HistRespHdr::word_bw_tag<32>, HistRespHdr const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) (.82)' (./include/hist_resp_hdr.h:106:0)
+
+INFO: [HLS 214-178] Inlining function 'HistRespHdr::write_axi4_stream_impl(HistRespHdr::word_bw_tag<32>, HistRespHdr const*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) (.82)' into 'void HistRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' (./include/hist_resp_hdr.h:119:0)
+
+INFO: [HLS 214-178] Inlining function 'hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()' into 'CfgPayload::read_axi4_stream_impl(CfgPayload::word_bw_tag<32>, CfgPayload*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' (./include/cfg_payload.h:219:0)
+
+INFO: [HLS 214-178] Inlining function 'streamutils::uint_to_float(unsigned int)' into 'CfgPayload::read_axi4_stream_impl(CfgPayload::word_bw_tag<32>, CfgPayload*, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' (./include/cfg_payload.h:219:0)
+
+INFO: [HLS 214-178] Inlining function 'void CfgPayload::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, streamutils::tlast_status&)' into 'void CfgPayload::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' (./include/cfg_payload.h:316:0)
+
+INFO: [HLS 214-178] Inlining function 'void HistRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' into 'ap_uint<8> hist_impl::configure<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_configure_impl.tpp:24:0)
+
+INFO: [HLS 214-178] Inlining function 'void CfgPayload::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' into 'ap_uint<8> hist_impl::configure<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_configure_impl.tpp:24:0)
+
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::mantissa() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::expv() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::__signbit() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' into 'int generic_cast_IEEE754<int, float>(float, bool)' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:116:0)
+
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, float>(float, bool)' into '__hls_fptosi_float_i32' (C:\scratch\HEAD\hls_product\738\2026.1\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:51:0)
+
+INFO: [HLS 214-178] Inlining function 'void HistRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' into 'ap_uint<8> hist_impl::accumulate<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_accumulate_impl.tpp:31:0)
+
+INFO: [HLS 214-178] Inlining function 'hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>::axis()' into 'ap_uint<8> hist_impl::accumulate<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_accumulate_impl.tpp:31:0)
+
+INFO: [HLS 214-178] Inlining function 'streamutils::uint_to_float(unsigned int)' into 'ap_uint<8> hist_impl::accumulate<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_accumulate_impl.tpp:31:0)
+
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_float_i32' into 'ap_uint<8> hist_impl::accumulate<32, 32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, float*, ap_uint<32>*)' (gen/../hist_accumulate_impl.tpp:31:0)
+
+INFO: [HLS 214-178] Inlining function 'void HistRespHdr::write_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, bool) const' into 'ap_uint<8> hist_impl::emit<32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, ap_uint<32>*)' (gen/../hist_emit_impl.tpp:19:0)
+
+INFO: [HLS 214-178] Inlining function 'void streamutils::write_axi4_word<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>, bool)' into 'ap_uint<8> hist_impl::emit<32>(HistCmdHdr, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<32>*, ap_uint<32>*)' (gen/../hist_emit_impl.tpp:19:0)
+
+INFO: [HLS 214-178] Inlining function 'void HistCmdHdr::read_axi4_stream<32>(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&)' into 'hist(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_uint<1>&, ap_uint<8>&, ap_uint<16>&)' (gen/hist.cpp:9:0)
+
+INFO: [HLS 200-1995] There were 948 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 200-1995] There were 692 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 214-248] Applying array_partition to 'local_counters': Complete partitioning on dimension 1. (gen/../hist_accumulate_impl.tpp:63:17)
+
+INFO: [HLS 200-1995] There were 778 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 200-1995] There were 711 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 200-1995] There were 711 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 200-1995] There were 711 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 200-1995] There were 989 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 200-1995] There were 978 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 214-376] Pipelining loop< VITIS_LOOP_75_2> at gen/../hist_accumulate_impl.tpp:75:22 due to pipeline_loops threshold
+
+INFO: [HLS 214-376] Pipelining loop< VITIS_LOOP_32_1> at gen/hist.cpp:32:22 due to pipeline_loops threshold
+
+INFO: [HLS 200-1995] There were 861 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 214-421] Partitioning small array 'nbin' due to array size. (gen/hist.cpp:26:17)
+
+INFO: [HLS 214-421] Partitioning small array 'bounds' due to array size. (gen/hist.cpp:28:11)
+
+INFO: [HLS 214-248] Applying array_partition to 'nbin': Complete partitioning on dimension 1. (gen/hist.cpp:26:17)
+
+INFO: [HLS 214-248] Applying array_partition to 'bounds': Complete partitioning on dimension 1. (gen/hist.cpp:28:11)
+
+INFO: [HLS 200-1995] There were 723 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 200-1995] There were 723 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 200-1995] There were 646 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 200-1995] There were 520 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/report/csynth_design_size.rpt:2)
+
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 16.754 seconds; current allocated memory: 169.691 MB.
+
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.006 seconds; current allocated memory: 169.691 MB.
+
+INFO: [HLS 200-10] Starting code transformations ...
+
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.152 seconds; current allocated memory: 183.324 MB.
+
+INFO: [HLS 200-10] Checking synthesizability ...
+
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.129 seconds; current allocated memory: 185.594 MB.
+
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.46 seconds; current allocated memory: 208.750 MB.
+
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.675 seconds; current allocated memory: 269.832 MB.
+
+INFO: [HLS 200-2255] Checking Wire Delay Status: Wire Delay Mode is ON
+
+INFO: [HLS 200-10] Starting hardware synthesis ...
+
+INFO: [HLS 200-10] Synthesizing 'hist' ...
+
+WARNING: [SYN 201-103] Legalizing function name 'accumulate<32, 32>_Pipeline_VITIS_LOOP_75_2' to 'accumulate_32_32_Pipeline_VITIS_LOOP_75_2'.
+
+WARNING: [SYN 201-103] Legalizing function name 'accumulate<32, 32>' to 'accumulate_32_32_s'.
+
+WARNING: [SYN 201-103] Legalizing function name 'configure<32, 32>' to 'configure_32_32_s'.
+
+WARNING: [SYN 201-103] Legalizing function name 'emit<32>_Pipeline_VITIS_LOOP_32_1' to 'emit_32_Pipeline_VITIS_LOOP_32_1'.
+
+WARNING: [SYN 201-103] Legalizing function name 'emit<32>' to 'emit_32_s'.
+
+INFO: [HLS 200-10] ----------------------------------------------------------------
+
+INFO: [HLS 200-42] -- Implementing module 'hist_Pipeline_VITIS_LOOP_32_1' 
+
+INFO: [HLS 200-10] ----------------------------------------------------------------
+
+INFO: [SCHED 204-11] Starting scheduling ...
+
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_32_1'.
+
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_32_1'
+
+INFO: [SCHED 204-11] Finished scheduling.
+
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.335 seconds; current allocated memory: 275.344 MB.
+
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.044 seconds; current allocated memory: 276.914 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'accumulate_32_32_Pipeline_VITIS_LOOP_75_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_75_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 18, loop 'VITIS_LOOP_75_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.192 seconds; current allocated memory: 304.754 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.479 seconds; current allocated memory: 304.754 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'accumulate_32_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.45 seconds; current allocated memory: 304.754 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.103 seconds; current allocated memory: 304.754 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'read_axi4_stream_impl' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.134 seconds; current allocated memory: 304.754 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.039 seconds; current allocated memory: 304.754 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'configure_32_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.202 seconds; current allocated memory: 304.754 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.079 seconds; current allocated memory: 304.754 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'emit_32_Pipeline_VITIS_LOOP_32_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_32_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_32_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.103 seconds; current allocated memory: 304.754 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.038 seconds; current allocated memory: 304.754 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'emit_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.15 seconds; current allocated memory: 304.754 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.059 seconds; current allocated memory: 304.754 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'hist' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 304.754 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.088 seconds; current allocated memory: 304.754 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'hist_Pipeline_VITIS_LOOP_32_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'hist_Pipeline_VITIS_LOOP_32_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.148 seconds; current allocated memory: 304.754 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'accumulate_32_32_Pipeline_VITIS_LOOP_75_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'accumulate_32_32_Pipeline_VITIS_LOOP_75_2' pipeline 'VITIS_LOOP_75_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_33_4_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'accumulate_32_32_Pipeline_VITIS_LOOP_75_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.759 seconds; current allocated memory: 304.754 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'accumulate_32_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_16_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitofp_32ns_32_6_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'accumulate_32_32_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.648 seconds; current allocated memory: 307.477 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'read_axi4_stream_impl' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'read_axi4_stream_impl'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.444 seconds; current allocated memory: 307.848 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'configure_32_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'configure_32_32_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.231 seconds; current allocated memory: 307.879 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'emit_32_Pipeline_VITIS_LOOP_32_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'emit_32_Pipeline_VITIS_LOOP_32_1' pipeline 'VITIS_LOOP_32_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'emit_32_Pipeline_VITIS_LOOP_32_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 0.52 seconds; current allocated memory: 309.797 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'emit_32_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'emit_32_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.228 seconds; current allocated memory: 310.535 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'hist' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/s_in_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/s_in_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/s_in_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/s_in_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/m_out_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/m_out_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/m_out_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/m_out_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/halted' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/error' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'hist/tx_id' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'hist' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'halted', 'error', 'tx_id' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'hist'.
+INFO: [RTMG 210-278] Implementing memory 'hist_counters_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.248 seconds; current allocated memory: 311.691 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.432 seconds; current allocated memory: 319.414 MB.
+INFO: [HLS 200-2225] Wrote inferred directives to file C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/syn/inferred_directives.ini
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.675 seconds; current allocated memory: 327.094 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for hist.
+INFO: [VLOG 209-307] Generating Verilog RTL for hist.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.82 MHz
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:54; Allocated memory: 168.273 MB.
+INFO: [HLS 200-1510] Running: cosim_design -argv C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/results/vitis/cosim -trace_level none 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "C:/AMDDesignTools/2026.1/Vitis/win64/tools/clang-16/bin/clang++"
+   Compiling apatb_hist.cpp
+   Compiling apatb_hist_util.cpp
+   Compiling hist.cpp_pre.cpp
+   Compiling hist_tb.cpp_pre.cpp
+   Compiling streamutils.cpp_pre.cpp
+   Compiling apatb_hist_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+WARNING [HLS SIM]: hls::stream 'hls::stream<hls::axis<ap_int<32>, 0ull, 0ull, 0ull, (unsigned char)56, false>, 0>12' contains leftover data, which may result in RTL simulation hanging.
+
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 137
+
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+find not read role field
+find not read role field
+find not read role field
+INFO: [Common 17-3922] A valid Vivado Design Suite BASIC license has been detected. Your current license is active and will expire on 05-sep-2027.
+
+
+
+****** Vivado v2026.1 (64-bit)
+
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+
+  **** Start of session at: Thu Nov 19 18:42:58 2026
+
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+source run_vivado_gen_ip.tcl -notrace
+
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+
+Current project path is 'C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/.autopilot/db/ip_tmp'
+
+create_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 698.996 ; gain = 271.176
+
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2026.1/Vivado/data/ip'.
+
+WARNING: [IP_Flow 19-4832] The IP name 'hist_fcmp_32ns_32ns_1_2_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+
+create_ip: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 720.488 ; gain = 21.492
+
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'hist_fcmp_32ns_32ns_1_2_no_dsp_1_ip'...
+
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'hist_fcmp_32ns_32ns_1_2_no_dsp_1_ip'...
+
+WARNING: [IP_Flow 19-4832] The IP name 'hist_fdiv_32ns_32ns_32_16_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'hist_fdiv_32ns_32ns_32_16_no_dsp_1_ip'...
+
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'hist_fdiv_32ns_32ns_32_16_no_dsp_1_ip'...
+
+WARNING: [IP_Flow 19-4832] The IP name 'hist_fmul_32ns_32ns_32_4_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'hist_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'hist_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+
+WARNING: [IP_Flow 19-4832] The IP name 'hist_fsub_32ns_32ns_32_5_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'hist_fsub_32ns_32ns_32_5_full_dsp_1_ip'...
+
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'hist_fsub_32ns_32ns_32_5_full_dsp_1_ip'...
+
+WARNING: [IP_Flow 19-4832] The IP name 'hist_sitofp_32ns_32_6_no_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'hist_sitofp_32ns_32_6_no_dsp_1_ip'...
+
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'hist_sitofp_32ns_32_6_no_dsp_1_ip'...
+
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 19 18:43:44 2026...
+
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+
+
+C:\Users\troop\SynologyDrive\NYU\Fall_2026\Adv_HW_Design\hwdesign-work\cmdresp\takehome\waveflow_hist_proj\solution1\sim\verilog>set PATH= 
+
+
+
+C:\Users\troop\SynologyDrive\NYU\Fall_2026\Adv_HW_Design\hwdesign-work\cmdresp\takehome\waveflow_hist_proj\solution1\sim\verilog>call C:/AMDDesignTools/2026.1/Vivado/bin/xelab xil_defaultlib.apatb_hist_top xil_defaultlib.glbl -Oenable_linking_all_libraries -prj hist.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm  -L floating_point_v7_1_22 -L floating_point_v7_0_27 --lib "ieee_proposed=./ieee_proposed" -L uvm -relax -i ./svr -i ./axivip -i ./svtb -i ./file_agent -i ./hist_subsystem  -s hist  
+
+Vivado Simulator v2026.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: C:/AMDDesignTools/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_hist_top xil_defaultlib.glbl -Oenable_linking_all_libraries -prj hist.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_22 -L floating_point_v7_0_27 --lib ieee_proposed=./ieee_proposed -L uvm -relax -i ./svr -i ./axivip -i ./svtb -i ./file_agent -i ./hist_subsystem -s hist 
+
+Multi-threading is on. Using 10 slave threads.
+
+Determining compilation order of HDL files.
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/glbl.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module glbl
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/AESL_deadlock_idx0_monitor.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx0_monitor
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/AESL_deadlock_idx1_monitor.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx1_monitor
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/AESL_deadlock_idx3_monitor.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx3_monitor
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/AESL_deadlock_idx5_monitor.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_idx5_monitor
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_kernel_monitor_top
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist.autotb.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module apatb_hist_top
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_accumulate_32_32_Pipeline_VITIS_LOOP_75_2.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_accumulate_32_32_Pipeline_VITIS_LOOP_75_2
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_accumulate_32_32_s.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_accumulate_32_32_s
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_configure_32_32_s.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_configure_32_32_s
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_control_s_axi.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_control_s_axi
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_counters_RAM_AUTO_1R1W.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_counters_RAM_AUTO_1R1W
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_emit_32_Pipeline_VITIS_LOOP_32_1.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_emit_32_Pipeline_VITIS_LOOP_32_1
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_emit_32_s.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_emit_32_s
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_fcmp_32ns_32ns_1_2_no_dsp_1.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_fcmp_32ns_32ns_1_2_no_dsp_1
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_fdiv_32ns_32ns_32_16_no_dsp_1.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_fdiv_32ns_32ns_32_16_no_dsp_1
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_flow_control_loop_pipe_sequential_init
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_fmul_32ns_32ns_32_4_max_dsp_1.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_fmul_32ns_32ns_32_4_max_dsp_1
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_fsub_32ns_32ns_32_5_full_dsp_1.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_fsub_32ns_32ns_32_5_full_dsp_1
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_hist_Pipeline_VITIS_LOOP_32_1.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_hist_Pipeline_VITIS_LOOP_32_1
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_read_axi4_stream_impl.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_read_axi4_stream_impl
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_regslice_both.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_regslice_both
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_sitofp_32ns_32_6_no_dsp_1.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_sitofp_32ns_32_6_no_dsp_1
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_sparsemux_33_4_32_1_1.v" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module hist_sparsemux_33_4_32_1_1
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/file_agent/file_agent_pkg.sv" into library xil_defaultlib
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/svr/svr_pkg.sv" into library xil_defaultlib
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/svr/svr_if.sv" into library xil_defaultlib
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/axivip/axi_pkg.sv" into library xil_defaultlib
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/axivip/axi_if.sv" into library xil_defaultlib
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/hist_subsystem/hist_subsystem_pkg.sv" into library xil_defaultlib
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/svtb/misc_interface.sv" into library xil_defaultlib
+
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/svtb/sv_module_top.sv" into library xil_defaultlib
+
+INFO: [VRFC 10-311] analyzing module sv_module_top
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/ip/xil_defaultlib/hist_fcmp_32ns_32ns_1_2_no_dsp_1_ip.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'hist_fcmp_32ns_32ns_1_2_no_dsp_1_ip'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/ip/xil_defaultlib/hist_fdiv_32ns_32ns_32_16_no_dsp_1_ip.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'hist_fdiv_32ns_32ns_32_16_no_dsp_1_ip'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/ip/xil_defaultlib/hist_fmul_32ns_32ns_32_4_max_dsp_1_ip.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'hist_fmul_32ns_32ns_32_4_max_dsp_1_ip'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/ip/xil_defaultlib/hist_fsub_32ns_32ns_32_5_full_dsp_1_ip.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'hist_fsub_32ns_32ns_32_5_full_dsp_1_ip'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/troop/SynologyDrive/NYU/Fall_2026/Adv_HW_Design/hwdesign-work/cmdresp/takehome/waveflow_hist_proj/solution1/sim/verilog/ip/xil_defaultlib/hist_sitofp_32ns_32_6_no_dsp_1_ip.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'hist_sitofp_32ns_32_6_no_dsp_1_ip'
+
+Starting static elaboration
+
+Pass Through NonSizing Optimizer
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_viv_comp
+
+Compiling package xbip_utils_v3_0_16.xbip_utils_v3_0_16_pkg
+
+Compiling package axi_utils_v2_0_12.axi_utils_v2_0_12_pkg
+
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_consts
+
+Compiling package ieee.math_real
+
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_exp_table...
+
+Compiling package mult_gen_v12_0_25.mult_gen_v12_0_25_pkg
+
+Compiling package floating_point_v7_1_22.floating_point_v7_1_22_pkg
+
+Compiling package floating_point_v7_1_22.flt_utils
+
+Compiling package unisim.vcomponents
+
+Compiling package xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv_comp
+
+Compiling package ieee.vital_timing
+
+Compiling package ieee.vital_primitives
+
+Compiling package unisim.vpkg
+
+Compiling package floating_point_v7_1_22.vt2mutils
+
+Compiling package floating_point_v7_1_22.vt2mcomps
+
+Compiling package xil_defaultlib.$unit_sv_module_top_sv
+
+Compiling package uvm.uvm_pkg
+
+Compiling package std.std
+
+Compiling package xil_defaultlib.svr_pkg
+
+Compiling package xil_defaultlib.file_agent_pkg
+
+Compiling package xil_defaultlib.axi_pkg
+
+Compiling package xil_defaultlib.hist_subsystem_pkg
+
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+
+Compiling module xil_defaultlib.hist_counters_RAM_AUTO_1R1W
+
+Compiling module xil_defaultlib.hist_flow_control_loop_pipe_sequ...
+
+Compiling module xil_defaultlib.hist_hist_Pipeline_VITIS_LOOP_32...
+
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=7,length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=4,length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=16,length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=24,length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=17,length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=25,length=0)\]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=48,length=0)\]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.fix_mult_dsp48e1_sgl [\fix_mult_dsp48e1_sgl(registers=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.fix_mult [\fix_mult(c_xdevicefamily="zynq"...]
+
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=8,length=0,fast_inp...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=32,length=0)\]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=0,fast_input=true)...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.special_detect [\special_detect(c_xdevicefamily=...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [delay_default]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2,fast_input=true)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(fast_input=true)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=4,fast_input=true)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=8)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=3,length=0,fast_inp...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=4,length=0,fast_inp...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=14,length=0)\]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_mult_exp [\flt_mult_exp(c_xdevicefamily="z...]
+
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=30,length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=18,length=0)\]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.flt_round_dsp_opt_full [\flt_round_dsp_opt_full(c_xdevic...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_mult_round [\flt_mult_round(c_xdevicefamily=...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_mult [\flt_mult(c_xdevicefamily="zynq"...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22_viv [\floating_point_v7_1_22_viv(c_xd...]
+
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22 [\floating_point_v7_1_22(c_xdevic...]
+
+Compiling architecture hist_fmul_32ns_32ns_32_4_max_dsp_1_ip_arch of entity xil_defaultlib.hist_fmul_32ns_32ns_32_4_max_dsp_1_ip [hist_fmul_32ns_32ns_32_4_max_dsp...]
+
+Compiling module xil_defaultlib.hist_fmul_32ns_32ns_32_4_max_dsp...
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=3,length=0)\]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.compare_ne_im [\compare_ne_im(c_xdevicefamily="...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2,length=0)\]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=11,length=0)\]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq [\compare_eq(c_xdevicefamily="zyn...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.compare_gt [\compare_gt(c_xdevicefamily="zyn...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.fp_cmp [\fp_cmp(c_xdevicefamily="zynq",c...]
+
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22_viv [\floating_point_v7_1_22_viv(c_xd...]
+
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22 [\floating_point_v7_1_22(c_xdevic...]
+
+Compiling architecture hist_fcmp_32ns_32ns_1_2_no_dsp_1_ip_arch of entity xil_defaultlib.hist_fcmp_32ns_32ns_1_2_no_dsp_1_ip [hist_fcmp_32ns_32ns_1_2_no_dsp_1...]
+
+Compiling module xil_defaultlib.hist_fcmp_32ns_32ns_1_2_no_dsp_1
+
+Compiling module xil_defaultlib.hist_sparsemux_33_4_32_1_1(din0_...
+
+Compiling module xil_defaultlib.hist_accumulate_32_32_Pipeline_V...
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=24,length=0,fast_in...]
+
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(c_part="xc7z020...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=13,length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=27,length=0)\]
+
+Compiling architecture synth of entity floating_point_v7_1_22.align_add_dsp48e1_sgl [\align_add_dsp48e1_sgl(c_xdevice...]
+
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000001111...]
+
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000000000...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=5,length=0)\]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.lead_zero_encode_shift [\lead_zero_encode_shift(ab_fw=24...]
+
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111110010101001011...]
+
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00010001010111110000...]
+
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11101110101000001111...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2)\]
+
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(adreg=0,alumodereg=0,ca...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,c_wi...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.norm_and_round_dsp48e1_sgl [\norm_and_round_dsp48e1_sgl(c_mu...]
+
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10011001100110011001...]
+
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111000000001111...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=9,length=0)\]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=8,length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=10)\]
+
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+
+Compiling architecture fde_v of entity unisim.FDE [fde_default]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.special_detect [\special_detect(c_xdevicefamily=...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.compare_gt [\compare_gt(c_xdevicefamily="zyn...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.compare [\compare(c_xdevicefamily="zynq",...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=9)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2,length=2,fast_inp...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=2,fast_input=true)...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=2,length=0,fast_inp...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=12,length=0)\]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_add_exp_sp [\flt_add_exp_sp(c_xdevicefamily=...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=23)\]
+
+Compiling architecture synth of entity floating_point_v7_1_22.flt_dec_op [\flt_dec_op(c_xdevicefamily="zyn...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_add_dsp [\flt_add_dsp(c_xdevicefamily="zy...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_add [\flt_add(c_xdevicefamily="zynq",...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22_viv [\floating_point_v7_1_22_viv(c_xd...]
+
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22 [\floating_point_v7_1_22(c_xdevic...]
+
+Compiling architecture hist_fsub_32ns_32ns_32_5_full_dsp_1_ip_arch of entity xil_defaultlib.hist_fsub_32ns_32ns_32_5_full_dsp_1_ip [hist_fsub_32ns_32ns_32_5_full_ds...]
+
+Compiling module xil_defaultlib.hist_fsub_32ns_32ns_32_5_full_ds...
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=23,length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=25,length=0,fast_in...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.flt_div_mant_addsub [\flt_div_mant_addsub(c_xdevicefa...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=26,length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=25,fast_input=true)...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.flt_div_mant_addsub [\flt_div_mant_addsub(c_xdevicefa...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=26)\]
+
+Compiling architecture virtex of entity floating_point_v7_1_22.flt_div_mant [\flt_div_mant(c_xdevicefamily="z...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=10,fast_input=true)...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.special_detect [\special_detect(c_xdevicefamily=...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=13,fast_input=true...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=8,length=12)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=12,fast_input=true...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=3,length=12,fast_in...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=4,length=12,fast_in...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_div_exp [\flt_div_exp(c_xdevicefamily="no...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=12,length=0,fast_in...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.flt_round_bit [\flt_round_bit(c_xdevicefamily="...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+
+Compiling architecture virtex of entity floating_point_v7_1_22.flt_div [\flt_div(c_xdevicefamily="zynq",...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22_viv [\floating_point_v7_1_22_viv(c_xd...]
+
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22 [\floating_point_v7_1_22(c_xdevic...]
+
+Compiling architecture hist_fdiv_32ns_32ns_32_16_no_dsp_1_ip_arch of entity xil_defaultlib.hist_fdiv_32ns_32ns_32_16_no_dsp_1_ip [hist_fdiv_32ns_32ns_32_16_no_dsp...]
+
+Compiling module xil_defaultlib.hist_fdiv_32ns_32ns_32_16_no_dsp...
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_has_ce=...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=31,length=0)\]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=32)\]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(width=4)\]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.norm_zero_det [\norm_zero_det(data_width=7,norm...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.mux4 [\mux4(c_xdevicefamily="zynq",wid...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.mux4 [\mux4(c_xdevicefamily="zynq",wid...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.lead_zero_encode [\lead_zero_encode(c_xdevicefamil...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.shift_msb_first [\shift_msb_first(a_width=32,resu...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.carry_chain [\carry_chain(c_xdevicefamily="zy...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture rtl of entity floating_point_v7_1_22.delay [\delay(length=3)\]
+
+Compiling architecture synth of entity floating_point_v7_1_22.fix_to_flt_conv_exp [\fix_to_flt_conv_exp(c_xdevicefa...]
+
+Compiling architecture synth of entity floating_point_v7_1_22.flt_dec_op [\flt_dec_op(c_xdevicefamily="zyn...]
+
+Compiling architecture struct of entity floating_point_v7_1_22.fix_to_flt_conv [\fix_to_flt_conv(c_xdevicefamily...]
+
+Compiling architecture synth of entity xbip_pipe_v3_0_12.xbip_pipe_v3_0_12_viv [\xbip_pipe_v3_0_12_viv(c_latency...]
+
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22_viv [\floating_point_v7_1_22_viv(c_xd...]
+
+Compiling architecture xilinx of entity floating_point_v7_1_22.floating_point_v7_1_22 [\floating_point_v7_1_22(c_xdevic...]
+
+Compiling architecture hist_sitofp_32ns_32_6_no_dsp_1_ip_arch of entity xil_defaultlib.hist_sitofp_32ns_32_6_no_dsp_1_ip [hist_sitofp_32ns_32_6_no_dsp_1_i...]
+
+Compiling module xil_defaultlib.hist_sitofp_32ns_32_6_no_dsp_1(N...
+
+Compiling module xil_defaultlib.hist_accumulate_32_32_s
+
+Compiling module xil_defaultlib.hist_read_axi4_stream_impl
+
+Compiling module xil_defaultlib.hist_configure_32_32_s
+
+Compiling module xil_defaultlib.hist_emit_32_Pipeline_VITIS_LOOP...
+
+Compiling module xil_defaultlib.hist_emit_32_s
+
+Compiling module xil_defaultlib.hist_control_s_axi
+
+Compiling module xil_defaultlib.hist_regslice_both(DataWidth=32)
+
+Compiling module xil_defaultlib.hist_regslice_both(DataWidth=4)
+
+Compiling module xil_defaultlib.hist_regslice_both(DataWidth=1)
+
+Compiling module xil_defaultlib.hist
+
+Compiling module xil_defaultlib.misc_interface_default
+
+Compiling module xil_defaultlib.svr_if(DATA_WIDTH=41)
+
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=6,STRB_WIDTH=4...
+
+Compiling module xil_defaultlib.sv_module_top
+
+Compiling module xil_defaultlib.AESL_deadlock_idx1_monitor
+
+Compiling module xil_defaultlib.AESL_deadlock_idx3_monitor
+
+Compiling module xil_defaultlib.AESL_deadlock_idx5_monitor
+
+Compiling module xil_defaultlib.AESL_deadlock_idx0_monitor
+
+Compiling module xil_defaultlib.AESL_deadlock_kernel_monitor_top...
+
+Compiling module xil_defaultlib.nodf_module_intf_default
+
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=10)
+
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+
+Compiling module xil_defaultlib.dataflow_monitor_1
+
+Compiling module xil_defaultlib.apatb_hist_top
+
+Compiling module xil_defaultlib.glbl
+
+Built simulation snapshot hist
+
+
+
+****** xsim v2026.1 (64-bit)
+
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+
+  **** Start of session at: Thu Nov 19 18:45:34 2026
+
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+source xsim.dir/hist/xsim_script.tcl
+
+# xsim {hist} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=hist_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -autoloadwcfg -tclbatch {hist.tcl}
+
+Time resolution is 1 ps
+
+source hist.tcl
+
+## run all
+
+UVM_INFO C:AMDDesignTooÿÿ‚6.1Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+
+----------------------------------------------------------------
+
+UVM-1.2
+
+(C) 2007-2014 Mentor Graphics Corporation
+
+(C) 2007-2014 Cadence Design Systems, Inc.
+
+(C) 2006-2014 Synopsys, Inc.
+
+(C) 2011-2013 Cypress Semiconductor Corp.
+
+(C) 2013-2014 NVIDIA Corporation
+
+----------------------------------------------------------------
+
+
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+
+
+  You are using a version of the UVM library that has been compiled
+
+  with `UVM_NO_DEPRECATED undefined.
+
+
+
+  You are using a version of the UVM library that has been compiled
+
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+
+
+UVM_INFO C:AMDDesignTooÿÿ‚6.1Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+
+UVM_INFO C:AMDDesignTooÿÿ‚6.1Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18752) @ 0: reporter [UVMTOP] UVM testbench topology:
+
+----------------------------------------------------------------------------------------------------------
+
+Name                                               Type                              Size  Value          
+
+----------------------------------------------------------------------------------------------------------
+
+uvm_test_top                                       hist_test_lib                     -     @370           
+
+  top_env                                          hist_env                          -     @381           
+
+    axi_lite_control                               uvm_env                           -     @428           
+
+      item_rtr_port                                uvm_analysis_port                 -     @447           
+
+      item_wtr_port                                uvm_analysis_port                 -     @437           
+
+      master                                       uvm_agent                         -     @840           
+
+        ardrv                                      uvm_driver #(REQ,RSP)             -     @1515          
+
+          item_read_imp                            uvm_analysis_port                 -     @1544          
+
+          rsp_port                                 uvm_analysis_port                 -     @1534          
+
+          seq_item_port                            uvm_seq_item_pull_port            -     @1524          
+
+          m_num_sent                               integral                          32    'h0            
+
+        arsqr                                      axi_sequencer                     -     @1554          
+
+          rsp_export                               uvm_analysis_export               -     @1563          
+
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1681          
+
+          arbitration_queue                        array                             0     -              
+
+          lock_queue                               array                             0     -              
+
+          num_last_reqs                            integral                          32    'd1            
+
+          num_last_rsps                            integral                          32    'd1            
+
+        awdrv                                      uvm_driver #(REQ,RSP)             -     @987           
+
+          item_read_imp                            uvm_analysis_port                 -     @1016          
+
+          rsp_port                                 uvm_analysis_port                 -     @1006          
+
+          seq_item_port                            uvm_seq_item_pull_port            -     @996           
+
+          m_num_sent                               integral                          32    'h0            
+
+        awsqr                                      axi_sequencer                     -     @1026          
+
+          rsp_export                               uvm_analysis_export               -     @1035          
+
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1153          
+
+          arbitration_queue                        array                             0     -              
+
+          lock_queue                               array                             0     -              
+
+          num_last_reqs                            integral                          32    'd1            
+
+          num_last_rsps                            integral                          32    'd1            
+
+        bdrv                                       uvm_driver #(REQ,RSP)             -     @1339          
+
+          item_read_imp                            uvm_analysis_port                 -     @1368          
+
+          rsp_port                                 uvm_analysis_port                 -     @1358          
+
+          seq_item_port                            uvm_seq_item_pull_port            -     @1348          
+
+          m_num_sent                               integral                          32    'h0            
+
+        bsqr                                       axi_sequencer                     -     @1378          
+
+          rsp_export                               uvm_analysis_export               -     @1387          
+
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1505          
+
+          arbitration_queue                        array                             0     -              
+
+          lock_queue                               array                             0     -              
+
+          num_last_reqs                            integral                          32    'd1            
+
+          num_last_rsps                            integral                          32    'd1            
+
+        rdrv                                       uvm_driver #(REQ,RSP)             -     @1691          
+
+          item_read_imp                            uvm_analysis_port                 -     @1720          
+
+          rsp_port                                 uvm_analysis_port                 -     @1710          
+
+          seq_item_port                            uvm_seq_item_pull_port            -     @1700          
+
+          m_num_sent                               integral                          32    'h0            
+
+        rsqr                                       axi_sequencer                     -     @1730          
+
+          rsp_export                               uvm_analysis_export               -     @1739          
+
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1857          
+
+          arbitration_queue                        array                             0     -              
+
+          lock_queue                               array                             0     -              
+
+          num_last_reqs                            integral                          32    'd1            
+
+          num_last_rsps                            integral                          32    'd1            
+
+        wdrv                                       uvm_driver #(REQ,RSP)             -     @1163          
+
+          item_read_imp                            uvm_analysis_port                 -     @1192          
+
+          rsp_port                                 uvm_analysis_port                 -     @1182          
+
+          seq_item_port                            uvm_seq_item_pull_port            -     @1172          
+
+          m_num_sent                               integral                          32    'h0            
+
+        wsqr                                       axi_sequencer                     -     @1202          
+
+          rsp_export                               uvm_analysis_export               -     @1211          
+
+          seq_item_export                          uvm_seq_item_pull_imp             -     @1329          
+
+          arbitration_queue                        array                             0     -              
+
+          lock_queue                               array                             0     -              
+
+          num_last_reqs                            integral                          32    'd1            
+
+          num_last_rsps                            integral                          32    'd1            
+
+      monitor                                      uvm_monitor                       -     @662           
+
+        item_ar2r_port                             uvm_analysis_port                 -     @731           
+
+        item_ar_port                               uvm_analysis_port                 -     @701           
+
+        item_aw2b_port                             uvm_analysis_port                 -     @721           
+
+        item_aw_port                               uvm_analysis_port                 -     @671           
+
+        item_b_port                                uvm_analysis_port                 -     @691           
+
+        item_r_port                                uvm_analysis_port                 -     @711           
+
+        item_w_port                                uvm_analysis_port                 -     @681           
+
+        checks_enable                              integral                          1     'h1            
+
+        coverage_enable                            integral                          1     'h1            
+
+      state                                        axi_state                         -     @741           
+
+        ar2r_imp                                   uvm_analysis_imp_ar2r             -     @810           
+
+        ar_imp                                     uvm_analysis_imp_ar               -     @780           
+
+        aw2b_imp                                   uvm_analysis_imp_aw2b             -     @800           
+
+        aw_imp                                     uvm_analysis_imp_aw               -     @750           
+
+        b_imp                                      uvm_analysis_imp_b                -     @770           
+
+        item_rtr_port                              uvm_analysis_port                 -     @830           
+
+        item_wtr_port                              uvm_analysis_port                 -     @820           
+
+        r_imp                                      uvm_analysis_imp_r                -     @790           
+
+        w_imp                                      uvm_analysis_imp_w                -     @760           
+
+        avg_rate                                   integral                          32    'h0            
+
+        exp_rate                                   integral                          32    'h0            
+
+        win_size                                   integral                          32    'h0            
+
+        bqnum_for_slaseq                           integral                          32    'h0            
+
+        rq_from_model_num                          integral                          32    'h0            
+
+      vsqr                                         axi_virtual_sequencer             -     @849           
+
+        rsp_export                                 uvm_analysis_export               -     @858           
+
+        seq_item_export                            uvm_seq_item_pull_imp             -     @976           
+
+        arbitration_queue                          array                             0     -              
+
+        lock_queue                                 array                             0     -              
+
+        num_last_reqs                              integral                          32    'd1            
+
+        num_last_rsps                              integral                          32    'd1            
+
+      cfg                                          axi_cfg                           -     @400           
+
+        has_checker                                integral                          1     'h1            
+
+        has_coverage                               integral                          1     'h1            
+
+        id_num                                     integral                          32    'h1            
+
+        reset_level                                reset_level_enum                  32    RESET_LEVEL_LOW
+
+        drv_type                                   drv_type_enum                     32    MASTER         
+
+        write_latency_mode                         latency_mode_enum                 32    CHANNEL_FIRST  
+
+        read_latency_mode                          latency_mode_enum                 32    CHANNEL_FIRST  
+
+        clatency                                   axi_latency                       -     @424           
+
+          wr_latency                               integral                          32    'h0            
+
+          rd_latency                               integral                          32    'h0            
+
+    env_master_svr_s_in                            uvm_env                           -     @401           
+
+      m_agt                                        uvm_agent                         -     @1935          
+
+        drv                                        uvm_driver #(REQ,RSP)             -     @2083          
+
+          rsp_port                                 uvm_analysis_port                 -     @2102          
+
+          seq_item_port                            uvm_seq_item_pull_port            -     @2092          
+
+        mon                                        uvm_monitor                       -     @2112          
+
+          item_collect_port                        uvm_analysis_port                 -     @2123          
+
+        sqr                                        uvm_sequencer                     -     @1946          
+
+          rsp_export                               uvm_analysis_export               -     @1955          
+
+          seq_item_export                          uvm_seq_item_pull_imp             -     @2073          
+
+          arbitration_queue                        array                             0     -              
+
+          lock_queue                               array                             0     -              
+
+          num_last_reqs                            integral                          32    'd1            
+
+          num_last_rsps                            integral                          32    'd1            
+
+    env_slave_svr_m_out                            uvm_env                           -     @414           
+
+      s_agt                                        uvm_agent                         -     @2141          
+
+        drv                                        uvm_driver #(REQ,RSP)             -     @2289          
+
+          rsp_port                                 uvm_analysis_port                 -     @2308          
+
+          seq_item_port                            uvm_seq_item_pull_port            -     @2298          
+
+        mon                                        uvm_monitor                       -     @2318          
+
+          item_collect_port                        uvm_analysis_port                 -     @2329          
+
+        sqr                                        uvm_sequencer                     -     @2152          
+
+          rsp_export                               uvm_analysis_export               -     @2161          
+
+          seq_item_export                          uvm_seq_item_pull_imp             -     @2279          
+
+          arbitration_queue                        array                             0     -              
+
+          lock_queue                               array                             0     -              
+
+          num_last_reqs                            integral                          32    'd1            
+
+          num_last_rsps                            integral                          32    'd1            
+
+    hist_virtual_sqr                               hist_virtual_sequencer            -     @519           
+
+      rsp_export                                   uvm_analysis_export               -     @528           
+
+      seq_item_export                              uvm_seq_item_pull_imp             -     @646           
+
+      arbitration_queue                            array                             0     -              
+
+      lock_queue                                   array                             0     -              
+
+      num_last_reqs                                integral                          32    'd1            
+
+      num_last_rsps                                integral                          32    'd1            
+
+    refm                                           hist_reference_model              -     @457           
+
+      trans_num_idx                                integral                          32    'h0            
+
+    subsys_mon                                     hist_subsystem_monitor            -     @470           
+
+      control_rtr_imp                              uvm_analysis_imp_axi_rtr_control  -     @509           
+
+      control_wtr_imp                              uvm_analysis_imp_axi_wtr_control  -     @499           
+
+      scbd                                         hist_scoreboard                   -     @2356          
+
+        refm                                       hist_reference_model              -     @457           
+
+          trans_num_idx                            integral                          32    'h0            
+
+        file_rd_TVOUT_transaction_size             <unknown>                         -     @2366          
+
+          TV_FILE                                  string                            0     ""             
+
+          fp                                       integral                          32    'hxxxxxxxx     
+
+          TV_FILE_num                              integral                          32    'h0            
+
+          HEX_read                                 integral                          32    'h0            
+
+          DEC_read                                 integral                          32    'h0            
+
+          is_binary                                integral                          32    'h0            
+
+          TV_FILE_COMPARE                          string                            0     ""             
+
+          fp_compare                               integral                          32    'hxxxxxxxx     
+
+        TVOUT_transaction_size_queue               da(integral)                      0     -              
+
+        file_wr_port_m_out_m_out_TDATA             <unknown>                         -     @2367          
+
+          TV_FILE                                  string                            0     ""             
+
+          fp                                       integral                          32    'hxxxxxxxx     
+
+          file_open                                integral                          32    'h0            
+
+          write_file_done                          integral                          32    'h0            
+
+          write_section_done                       integral                          32    'h0            
+
+          TRANSACTION_NUM                          integral                          32    'h0            
+
+          transaction_num_idx                      integral                          32    'h0            
+
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+
+          transaction_depth_idx                    integral                          32    'h0            
+
+          ap_done_num_idx                          integral                          32    'h0            
+
+          is_binary                                integral                          32    'h0            
+
+        write_file_done_m_out_m_out_TDATA          integral                          32    'h0            
+
+        write_section_done_m_out_m_out_TDATA       integral                          32    'h0            
+
+        file_wr_port_m_out_m_out_TKEEP             <unknown>                         -     @2368          
+
+          TV_FILE                                  string                            0     ""             
+
+          fp                                       integral                          32    'hxxxxxxxx     
+
+          file_open                                integral                          32    'h0            
+
+          write_file_done                          integral                          32    'h0            
+
+          write_section_done                       integral                          32    'h0            
+
+          TRANSACTION_NUM                          integral                          32    'h0            
+
+          transaction_num_idx                      integral                          32    'h0            
+
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+
+          transaction_depth_idx                    integral                          32    'h0            
+
+          ap_done_num_idx                          integral                          32    'h0            
+
+          is_binary                                integral                          32    'h0            
+
+        write_file_done_m_out_m_out_TKEEP          integral                          32    'h0            
+
+        write_section_done_m_out_m_out_TKEEP       integral                          32    'h0            
+
+        file_wr_port_m_out_m_out_TSTRB             <unknown>                         -     @2369          
+
+          TV_FILE                                  string                            0     ""             
+
+          fp                                       integral                          32    'hxxxxxxxx     
+
+          file_open                                integral                          32    'h0            
+
+          write_file_done                          integral                          32    'h0            
+
+          write_section_done                       integral                          32    'h0            
+
+          TRANSACTION_NUM                          integral                          32    'h0            
+
+          transaction_num_idx                      integral                          32    'h0            
+
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+
+          transaction_depth_idx                    integral                          32    'h0            
+
+          ap_done_num_idx                          integral                          32    'h0            
+
+          is_binary                                integral                          32    'h0            
+
+        write_file_done_m_out_m_out_TSTRB          integral                          32    'h0            
+
+        write_section_done_m_out_m_out_TSTRB       integral                          32    'h0            
+
+        file_wr_port_m_out_m_out_TLAST             <unknown>                         -     @2370          
+
+          TV_FILE                                  string                            0     ""             
+
+          fp                                       integral                          32    'hxxxxxxxx     
+
+          file_open                                integral                          32    'h0            
+
+          write_file_done                          integral                          32    'h0            
+
+          write_section_done                       integral                          32    'h0            
+
+          TRANSACTION_NUM                          integral                          32    'h0            
+
+          transaction_num_idx                      integral                          32    'h0            
+
+          TRANSACTION_DEPTH                        integral                          32    'h0            
+
+          TRANSACTION_DEPTH_queue                  da(integral)                      0     -              
+
+          TRANSACTION_DEPTH_queue_for_depth_check  da(integral)                      0     -              
+
+          transaction_depth_idx                    integral                          32    'h0            
+
+          ap_done_num_idx                          integral                          32    'h0            
+
+          is_binary                                integral                          32    'h0            
+
+        write_file_done_m_out_m_out_TLAST          integral                          32    'h0            
+
+        write_section_done_m_out_m_out_TLAST       integral                          32    'h0            
+
+      svr_master_s_in_imp                          uvm_analysis_imp_svr_master_s_in  -     @479           
+
+      svr_slave_m_out_imp                          uvm_analysis_imp_svr_slave_m_out  -     @489           
+
+    env_master_svr_s_in                            uvm_env                           -     @401           
+
+    env_slave_svr_m_out                            uvm_env                           -     @414           
+
+    refm                                           hist_reference_model              -     @457           
+
+    hist_virtual_sqr                               hist_virtual_sequencer            -     @519           
+
+    hist_cfg                                       hist_config                       -     @395           
+
+      port_s_in_cfg                                svr_config                        -     @396           
+
+        svr_type                                   svr_inst_type                     32    SVR_MASTER     
+
+        prt_type                                   svr_protocol_type                 32    AXIS           
+
+        is_active                                  svr_active_passive_enum           1     SVR_ACTIVE     
+
+        reset_level                                svr_reset_level_enum              1     RESET_LEVEL_LOW
+
+        spec_cfg                                   svr_spec_cfg_enum                 32    NORMAL         
+
+        clatency                                   svr_latency                       -     @397           
+
+          transfer_latency                         integral                          32    'h0            
+
+      port_m_out_cfg                               svr_config                        -     @398           
+
+        svr_type                                   svr_inst_type                     32    SVR_SLAVE      
+
+        prt_type                                   svr_protocol_type                 32    AXIS           
+
+        is_active                                  svr_active_passive_enum           1     SVR_ACTIVE     
+
+        reset_level                                svr_reset_level_enum              1     RESET_LEVEL_LOW
+
+        spec_cfg                                   svr_spec_cfg_enum                 32    NORMAL         
+
+        clatency                                   svr_latency                       -     @399           
+
+          transfer_latency                         integral                          32    'h0            
+
+      control_cfg                                  axi_cfg                           -     @400           
+
+        has_checker                                integral                          1     'h1            
+
+        has_coverage                               integral                          1     'h1            
+
+        id_num                                     integral                          32    'h1            
+
+        reset_level                                reset_level_enum                  32    RESET_LEVEL_LOW
+
+        drv_type                                   drv_type_enum                     32    MASTER         
+
+        write_latency_mode                         latency_mode_enum                 32    CHANNEL_FIRST  
+
+        read_latency_mode                          latency_mode_enum                 32    CHANNEL_FIRST  
+
+        clatency                                   axi_latency                       -     @424           
+
+          wr_latency                               integral                          32    'h0            
+
+          rd_latency                               integral                          32    'h0            
+
+      check_ena                                    integral                          32    'h0            
+
+      cover_ena                                    integral                          32    'h0            
+
+----------------------------------------------------------------------------------------------------------
+
+
+
+UVM_INFO C:AMDDesignTooÿÿ‚6.1Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+
+////////////////////////////////////////////////////////////////////////////////////
+
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+
+//
+
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+
+////////////////////////////////////////////////////////////////////////////////////
+
+// RTL Simulation : 0 / 21 [n/a] @ "125000"
+
+// RTL Simulation : 1 / 21 [n/a] @ "1295000"
+
+// RTL Simulation : 2 / 21 [n/a] @ "3135000"
+
+// RTL Simulation : 3 / 21 [n/a] @ "5095000"
+
+// RTL Simulation : 4 / 21 [n/a] @ "6295000"
+
+// RTL Simulation : 5 / 21 [n/a] @ "8895000"
+
+// RTL Simulation : 6 / 21 [n/a] @ "10105000"
+
+// RTL Simulation : 7 / 21 [n/a] @ "10495000"
+
+// RTL Simulation : 8 / 21 [n/a] @ "10935000"
+
+// RTL Simulation : 9 / 21 [n/a] @ "11375000"
+
+// RTL Simulation : 10 / 21 [n/a] @ "11925000"
+
+// RTL Simulation : 11 / 21 [n/a] @ "12895000"
+
+// RTL Simulation : 12 / 21 [n/a] @ "14375000"
+
+// RTL Simulation : 13 / 21 [n/a] @ "15345000"
+
+// RTL Simulation : 14 / 21 [n/a] @ "16325000"
+
+// RTL Simulation : 15 / 21 [n/a] @ "17585000"
+
+// RTL Simulation : 16 / 21 [n/a] @ "18845000"
+
+// RTL Simulation : 17 / 21 [n/a] @ "20105000"
+
+// RTL Simulation : 18 / 21 [n/a] @ "21365000"
+
+// RTL Simulation : 19 / 21 [n/a] @ "22625000"
+
+// RTL Simulation : 20 / 21 [n/a] @ "23885000"
+
+// RTL Simulation : 21 / 21 [n/a] @ "25145000"
+
+////////////////////////////////////////////////////////////////////////////////////
+
+$finish called at time : 25315 ns : File "C:\AMDDesignTools\2026.1\Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+
+## quit
+
+INFO: [Common 17-206] Exiting xsim at Thu Nov 19 18:45:39 2026...
+
+INFO: [COSIM 212-316] Starting C post checking ...
+WARNING [HLS SIM]: hls::stream 'hls::stream<hls::axis<ap_int<32>, 0ull, 0ull, 0ull, (unsigned char)56, false>, 0>12' contains leftover data, which may result in RTL simulation hanging.
+
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 137
+
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [HLS 200-2161] Finished Command cosim_design Elapsed time: 00:03:15; Allocated memory: 14.254 MB.
+WAVEFLOW_SUCCESS: hist C-Synthesis and RTL Co-Simulation passed (func).
+INFO: [HLS 200-112] Total CPU user time: 15 seconds. Total CPU system time: 7 seconds. Total elapsed time: 267.399 seconds; peak allocated memory: 341.348 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 4m 29s
+INFO: [vitis-run 60-1662] Stopping dispatch session having empty uuid.

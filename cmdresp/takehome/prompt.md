@@ -74,6 +74,12 @@ carries only `ap_start` / `ap_done` plus the status registers.
 Invalid parameters are checked **before any payload is read**: `B < 1` or `B > 16`
 raises `INVALID_CONFIG`; `lo >= hi` raises `INVALID_CONFIG`.
 
+**Acknowledgment timing.** A CONFIG or DATA acknowledgment is emitted immediately
+after its header is accepted, before its payload is processed; a later payload
+error emits no additional response (every command is acknowledged exactly once,
+so the output stream stays in lockstep with the input stream). An END
+acknowledgment is emitted before its counter burst.
+
 ## Errors
 
 Status registers on AXI-Lite: `halted` (1 bit), `error` (code), `tx_id` (of the
@@ -90,6 +96,12 @@ of the input stream after an error are undefined; recovery is the host's job.
 | 4    | SAMPLE_OUT_OF_RANGE   | a sample `x < lo` or `x >= hi`                     |
 | 5    | TLAST_EARLY           | sample burst shorter than `nsamp` (early TLAST)    |
 | 6    | NO_TLAST              | sample burst longer than `nsamp` (missing TLAST)   |
+
+**DATA error priority.** If multiple DATA errors apply to one command, the
+reported code is the first that matches in this order: `SAMPLE_OUT_OF_RANGE`,
+then `TLAST_EARLY`, then `NO_TLAST`. (`ZERO_SAMPLES` and `DATA_BEFORE_CONFIG`
+are checked before the payload is read and therefore always take precedence over
+these three.)
 
 ## Verification
 
@@ -134,3 +146,4 @@ Every number and PASS/FAIL in Targets and Verification must name the file it cam
 | Version | Change        | Why |
 |---------|---------------|-----|
 | 1       | First version |     |
+| 2       | Added the **Acknowledgment timing** clause (ack emitted on header acceptance, before payload; a later payload error emits no further response) and the **DATA error priority** clause (`SAMPLE_OUT_OF_RANGE`, then `TLAST_EARLY`, then `NO_TLAST`). | The final run chose acknowledgment timing and DATA-error priority; version 2 now specifies both so the golden model, kernel, and testbench all rest on a single settled rule. |
